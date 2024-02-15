@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://quaner-dev.github.io/sitemap.xml
