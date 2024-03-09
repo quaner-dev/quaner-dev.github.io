@@ -29,7 +29,7 @@
       "url": "",
       "startDate": "2023-05",
       "endDate": "至今",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "summary": "负责三方数据对接，使用Flask编写脚本；修改Shell脚本以适应现场环境，运用Shell工具进行日志分析、监控、备份等工作；完成业务系统的软硬件交付；负责性能调优、软件测试与中间件性能测试；积极与客户沟通需求，跟进项目进度。",
       "highlights": ["Relativity"]
     },
     {
@@ -38,7 +38,7 @@
       "url": "https://www.yitutech.com/",
       "startDate": "2020-10",
       "endDate": "2023-05",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "summary": "负责项目范围评估、资源协调与计划制定，确保项目目标达成；转化并实现客户需求，引导合理开发；测试公司产品并提供专业报告；部署项目并技术支持，保障业务运行；支撑全国项目并利用Grafana监控分析产品性能。",
       "highlights": ["Relativity"]
     }
   ],
