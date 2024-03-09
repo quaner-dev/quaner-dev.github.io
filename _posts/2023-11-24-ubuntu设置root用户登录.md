@@ -1,4 +1,17 @@
-# 一、设置root用户密码
+---
+layout: post
+title: ubuntu设置root用户登录
+date: 2023-11-24
+description: ubuntu设定root登录
+tags: ssh
+categories: sample-posts
+chart:
+  vega_lite: true
+---
+
+# ubuntu设置root用户登录
+
+## 一、设置root用户密码
 
 ```bash
 # 设置root用户密码
@@ -6,7 +19,7 @@
 sudo passwd root
 ```
 
-# 二、设置root用户登录
+## 二、设置root用户登录
 
 ```bash
 # 修改sshd配置文件
@@ -21,13 +34,13 @@ PasswordAuthentication yes
 :wq
 ```
 
-# 三、重启SSH服务
+## 三、重启SSH服务
 
 ```bash
 # 重启ssh服务
 sudo systemctl restart sshd
 ```
 
-# 四、root用户登录测试
+## 四、root用户登录测试
 
 使用root账户直接登录服务器，登录成功则完成设置
