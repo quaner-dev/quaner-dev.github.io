@@ -10,7 +10,7 @@ chart:
 
 # ubuntu设置root用户登录
 
-## 一、设置root用户密码
+## 设置root用户密码
 
 ```bash
 # 设置root用户密码
@@ -18,7 +18,7 @@ chart:
 sudo passwd root
 ```
 
-## 二、设置root用户登录
+## 设置root用户登录
 
 ```bash
 # 修改sshd配置文件
@@ -33,13 +33,13 @@ PasswordAuthentication yes
 :wq
 ```
 
-## 三、重启SSH服务
+## 重启SSH服务
 
 ```bash
 # 重启ssh服务
 sudo systemctl restart sshd
 ```
 
-## 四、root用户登录测试
+## root用户登录测试
 
 使用root账户直接登录服务器，登录成功则完成设置
