@@ -124,7 +124,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: quaner-dev # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_description: a blog that records software technology
 permalink: /blog/:year/:title/
 
 # Pagination
