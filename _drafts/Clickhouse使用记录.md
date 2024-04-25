@@ -2,7 +2,7 @@
 
 ## clickhouse语句
 
-select 
+select
 
 ## clickhouse架构
 
