@@ -1,0 +1,33 @@
+# Ubuntu 18.04.4安装JDK
+
+## 下载二进制JDK
+
+[官网下载地址](https://www.oracle.com/java/technologies/downloads/#java8)
+下载对应的按转包
+
+## 放置到对用户目录
+
+mkdir /usr/lib/jdk
+tar xvf jdk-8u411-linux64.tar.gz -C /usr/lib/jdk
+
+## 添加环境变量
+
+vim /etc/profile
+
+在文件末尾增加
+
+```shell
+# java env
+export JAVA_HOME=/usr/lib/jdk/jdk1.8.0_411
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+```
+
+## 生效环境变量
+
+source /etc/profile
+
+## 测试java命令
+
+java -version
