@@ -1,4 +1,293 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://quaner-dev.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://quaner-dev.github.io/" rel="alternate" type="text/html" hreflang="cn"/><updated>2024-05-01T06:21:11+00:00</updated><id>https://quaner-dev.github.io/feed.xml</id><title type="html">blank</title><subtitle>A technical blog about daily summaries. </subtitle><entry><title type="html">ubuntu 18.04.4 安装JDK</title><link href="https://quaner-dev.github.io/blog/2024/Ubuntu-18.04.4-%E5%AE%89%E8%A3%85JDK/" rel="alternate" type="text/html" title="ubuntu 18.04.4 安装JDK"/><published>2024-05-01T00:00:00+00:00</published><updated>2024-05-01T00:00:00+00:00</updated><id>https://quaner-dev.github.io/blog/2024/Ubuntu%2018.04.4%20%E5%AE%89%E8%A3%85JDK</id><content type="html" xml:base="https://quaner-dev.github.io/blog/2024/Ubuntu-18.04.4-%E5%AE%89%E8%A3%85JDK/"><![CDATA[<h1 id="ubuntu-18044-安装jdk">Ubuntu 18.04.4 安装JDK</h1> <h2 id="下载二进制jdk">下载二进制JDK</h2> <p><a href="https://www.oracle.com/java/technologies/downloads/#java8">官网下载地址</a> 下载对应的按转包</p> <h2 id="放置到对用户目录">放置到对用户目录</h2> <p>mkdir /usr/lib/jdk tar xvf jdk-8u411-linux64.tar.gz -C /usr/lib/jdk</p> <h2 id="添加环境变量">添加环境变量</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/profile
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://quaner-dev.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://quaner-dev.github.io/" rel="alternate" type="text/html" hreflang="cn"/><updated>2024-05-14T13:42:08+00:00</updated><id>https://quaner-dev.github.io/feed.xml</id><title type="html">blank</title><subtitle>A technical blog about daily summaries. </subtitle><entry><title type="html">K8S笔记</title><link href="https://quaner-dev.github.io/blog/2024/K8S%E7%AC%94%E8%AE%B0/" rel="alternate" type="text/html" title="K8S笔记"/><published>2024-05-14T00:00:00+00:00</published><updated>2024-05-14T00:00:00+00:00</updated><id>https://quaner-dev.github.io/blog/2024/K8S%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="https://quaner-dev.github.io/blog/2024/K8S%E7%AC%94%E8%AE%B0/"><![CDATA[<p>[toc]</p> <h1 id="k8s-笔记">K8S 笔记</h1> <h2 id="第一章-kubernetes-基础">第一章 Kubernetes 基础</h2> <p>Kubernetes 是谷歌以 Borg 为前身，基于谷歌 15 年生产环境经验的基础上开源的一个项目，Kubernetes 致力于提供跨主机集群的自动部署、扩展、高可用以及运行应用程序容器的平台。</p> <h3 id="11-master-节点整个集群的控制中枢">1.1 Master 节点：整个集群的控制中枢</h3> <ul> <li>Kube-APIServer：集群的控制中枢，各个模块之间信息交互都需要经过 Kube-APIServer，同时它也是集群管理、资源配置、整个集群安全机制的入口。</li> <li>Controller-Manager：集群的状态管理器，保证 Pod 或其他资源达到期望值，也是需要和 APIServer 进行通信，在需要的时候创建、更新或删除它所管理的资源。</li> <li>Scheduler：集群的调度中心，它会根据指定的一系列条件，选择一个或一批最佳的节点，然后部署我们的 Pod。</li> <li>Etcd：键值数据库，报错一些集群的信息，一般生产环境中建议部署三个以上节点（奇数个）。</li> </ul> <h3 id="12-node工作节点">1.2 Node：工作节点</h3> <h4 id="workernode-节点minion-节点">Worker、node 节点、minion 节点</h4> <ul> <li>Kubelet：负责监听节点上 Pod 的状态，同时负责上报节点和节点上面 Pod 的状态，负责与 Master 节点通信，并管理节点上面的 Pod。</li> <li>Kube-proxy：负责 Pod 之间的通信和负载均衡，将指定的流量分发到后端正确的机器上。</li> <li>查看 Kube-proxy 工作模式：curl 127.0.0.1:10249/proxyMode <ul> <li>Ipvs：监听 Master 节点增加和删除 service 以及 endpoint 的消息，调用 Netlink 接口创建相应的 IPVS 规则。通过 IPVS 规则，将流量转发至相应的 Pod 上。</li> <li>Iptables：监听 Master 节点增加和删除 service 以及 endpoint 的消息，对于每一个 Service，他都会场景一个 iptables 规则，将 service 的 clusterIP 代理到后端对应的 Pod。</li> </ul> </li> </ul> <h4 id="其他组件">其他组件</h4> <ul> <li>Calico：符合 CNI 标准的网络插件，给每个 Pod 生成一个唯一的 IP 地址，并且把每个节点当做一个路由器。Cilium</li> <li>CoreDNS：用于 Kubernetes 集群内部 Service 的解析，可以让 Pod 把 Service 名称解析成 IP 地址，然后通过 Service 的 IP 地址进行连接到对应的应用上。</li> <li>Docker：容器引擎，负责对容器的管理。</li> </ul> <h2 id="第二章-pod">第二章 Pod</h2> <h3 id="11-什么是-pod">1.1 什么是 Pod</h3> <p>Pod 是 Kubernetes 中最小的单元，它由一组、一个或多个容器组成，每个 Pod 还包含了一个 Pause 容器，Pause 容器是 Pod 的父容器，主要负责僵尸进程的回收管理，通过 Pause 容器可以使同一个 Pod 里面的多个容器共享存储、网络、PID、IPC 等。</p> <h3 id="12-定义一个-pod">1.2 定义一个 Pod</h3> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span> <span class="c1"># 必选，API的版本号</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span> <span class="c1"># 必选，类型Pod</span>
+<span class="na">metadata</span><span class="pi">:</span> <span class="c1"># 必选，元数据</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span> <span class="c1"># 必选，符合RFC 1035规范的Pod名称</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># 可选，Pod所在的命名空间，不指定默认为default，可以使用-n 指定namespace</span>
+  <span class="na">labels</span><span class="pi">:</span> <span class="c1"># 可选，标签选择器，一般用于过滤和区分Pod</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">role</span><span class="pi">:</span> <span class="s">frontend</span> <span class="c1"># 可以写多个</span>
+  <span class="na">annotations</span><span class="pi">:</span> <span class="c1"># 可选，注释列表，可以写多个</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+<span class="na">spec</span><span class="pi">:</span> <span class="c1"># 必选，用于定义容器的详细信息</span>
+  <span class="na">initContainers</span><span class="pi">:</span> <span class="c1"># 初始化容器，在容器启动之前执行的一些初始化操作</span>
+    <span class="pi">-</span> <span class="na">command</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">sh</span>
+        <span class="pi">-</span> <span class="s">-c</span>
+        <span class="pi">-</span> <span class="s">echo "I am InitContainer for init some configuration"</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">busybox</span>
+      <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">IfNotPresent</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">init-container</span>
+  <span class="na">containers</span><span class="pi">:</span> <span class="c1"># 必选，容器列表</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span> <span class="c1"># 必选，符合RFC 1035规范的容器名称</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:latest</span> <span class="c1"># 必选，容器所用的镜像的地址</span>
+      <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">Always</span> <span class="c1"># 可选，镜像拉取策略</span>
+      <span class="na">command</span><span class="pi">:</span> <span class="c1"># 可选，容器启动执行的命令</span>
+        <span class="pi">-</span> <span class="s">nginx</span>
+        <span class="pi">-</span> <span class="s">-g</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">daemon</span><span class="nv"> </span><span class="s">off;"</span>
+      <span class="na">workingDir</span><span class="pi">:</span> <span class="s">/usr/share/nginx/html</span> <span class="c1"># 可选，容器的工作目录</span>
+      <span class="na">volumeMounts</span><span class="pi">:</span> <span class="c1"># 可选，存储卷配置，可以配置多个</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">webroot</span> <span class="c1"># 存储卷名称</span>
+          <span class="na">mountPath</span><span class="pi">:</span> <span class="s">/usr/share/nginx/html</span> <span class="c1"># 挂载目录</span>
+          <span class="na">readOnly</span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># 只读</span>
+      <span class="na">ports</span><span class="pi">:</span> <span class="c1"># 可选，容器需要暴露的端口号列表</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">http</span> <span class="c1"># 端口名称</span>
+          <span class="na">containerPort</span><span class="pi">:</span> <span class="m">80</span> <span class="c1"># 端口号</span>
+          <span class="na">protocol</span><span class="pi">:</span> <span class="s">TCP</span> <span class="c1"># 端口协议，默认TCP</span>
+      <span class="na">env</span><span class="pi">:</span> <span class="c1"># 可选，环境变量配置列表</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">TZ</span> <span class="c1"># 变量名</span>
+          <span class="na">value</span><span class="pi">:</span> <span class="s">Asia/Shanghai</span> <span class="c1"># 变量的值</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">LANG</span>
+          <span class="na">value</span><span class="pi">:</span> <span class="s">en_US.utf8</span>
+      <span class="na">resources</span><span class="pi">:</span> <span class="c1"># 可选，资源限制和资源请求限制</span>
+        <span class="na">limits</span><span class="pi">:</span> <span class="c1"># 最大限制设置</span>
+          <span class="na">cpu</span><span class="pi">:</span> <span class="s">1000m</span>
+          <span class="na">memory</span><span class="pi">:</span> <span class="s">1024Mi</span>
+        <span class="na">requests</span><span class="pi">:</span> <span class="c1"># 启动所需的资源</span>
+          <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+          <span class="na">memory</span><span class="pi">:</span> <span class="s">512Mi</span>
+      <span class="c1">#    startupProbe: # 可选，检测容器内进程是否完成启动。注意三种检查方式同时只能使用一种。</span>
+      <span class="c1">#      httpGet:      # httpGet检测方式，生产环境建议使用httpGet实现接口级健康检查，健康检查由应用程序提供。</span>
+      <span class="c1">#            path: /api/successStart # 检查路径</span>
+      <span class="c1">#            port: 80</span>
+      <span class="na">readinessProbe</span><span class="pi">:</span> <span class="c1"># 可选，健康检查。注意三种检查方式同时只能使用一种。</span>
+        <span class="na">httpGet</span><span class="pi">:</span> <span class="c1"># httpGet检测方式，生产环境建议使用httpGet实现接口级健康检查，健康检查由应用程序提供。</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">/</span> <span class="c1"># 检查路径</span>
+          <span class="na">port</span><span class="pi">:</span> <span class="m">80</span> <span class="c1"># 监控端口</span>
+      <span class="na">livenessProbe</span><span class="pi">:</span> <span class="c1"># 可选，健康检查</span>
+        <span class="c1">#exec:        # 执行容器命令检测方式</span>
+        <span class="c1">#command:</span>
+        <span class="c1">#- cat</span>
+        <span class="c1">#- /health</span>
+        <span class="c1">#httpGet:       # httpGet检测方式</span>
+        <span class="c1">#   path: /_health # 检查路径</span>
+        <span class="c1">#   port: 8080</span>
+        <span class="c1">#   httpHeaders: # 检查的请求头</span>
+        <span class="c1">#   - name: end-user</span>
+        <span class="c1">#     value: Jason</span>
+        <span class="na">tcpSocket</span><span class="pi">:</span> <span class="c1"># 端口检测方式</span>
+          <span class="na">port</span><span class="pi">:</span> <span class="m">80</span>
+        <span class="na">initialDelaySeconds</span><span class="pi">:</span> <span class="m">60</span> <span class="c1"># 初始化时间</span>
+        <span class="na">timeoutSeconds</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># 超时时间</span>
+        <span class="na">periodSeconds</span><span class="pi">:</span> <span class="m">5</span> <span class="c1"># 检测间隔</span>
+        <span class="na">successThreshold</span><span class="pi">:</span> <span class="m">1</span> <span class="c1"># 检查成功为2次表示就绪</span>
+        <span class="na">failureThreshold</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># 检测失败1次表示未就绪</span>
+      <span class="na">lifecycle</span><span class="pi">:</span>
+        <span class="na">postStart</span><span class="pi">:</span> <span class="c1"># 容器创建完成后执行的指令, 可以是exec httpGet TCPSocket</span>
+          <span class="na">exec</span><span class="pi">:</span>
+            <span class="na">command</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="s">sh</span>
+              <span class="pi">-</span> <span class="s">-c</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">mkdir</span><span class="nv"> </span><span class="s">/data/</span><span class="nv"> </span><span class="s">"</span>
+        <span class="na">preStop</span><span class="pi">:</span>
+          <span class="na">httpGet</span><span class="pi">:</span>
+            <span class="na">path</span><span class="pi">:</span> <span class="s">/</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="m">80</span>
+        <span class="c1">#  exec:</span>
+        <span class="c1">#    command:</span>
+        <span class="c1">#    - sh</span>
+        <span class="c1">#    - -c</span>
+        <span class="c1">#    - sleep 9</span>
+  <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">Always</span> <span class="c1"># 可选，默认为Always</span>
+  <span class="c1">#nodeSelector: # 可选，指定Node节点</span>
+  <span class="c1">#      region: subnet7</span>
+  <span class="na">imagePullSecrets</span><span class="pi">:</span> <span class="c1"># 可选，拉取镜像使用的secret，可以配置多个</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">default-dockercfg-86258</span>
+  <span class="na">hostNetwork</span><span class="pi">:</span> <span class="kc">false</span> <span class="c1"># 可选，是否为主机模式，如是，会占用主机端口</span>
+  <span class="na">volumes</span><span class="pi">:</span> <span class="c1"># 共享存储卷列表</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">webroot</span> <span class="c1"># 名称，与上述对应</span>
+      <span class="na">emptyDir</span><span class="pi">:</span>
+        <span class="pi">{}</span> <span class="c1"># 挂载目录</span>
+        <span class="c1">#hostPath: # 挂载本机目录</span>
+        <span class="c1">#  path: /etc/hosts</span>
+</code></pre></div></div> <h3 id="13-pod-探针">1.3 Pod 探针</h3> <ul> <li>StartupProbe：k8s1.16 版本后新加的探测方式，用于判断容器内应用程序是否已经启动。如果配置了 startupProbe，就会先禁止其他的探测，直到它成功为止，成功后将不在进行探测。</li> <li>LivenessProbe：用于探测容器是否运行，如果探测失败，kubelet 会根据配置的重启策略进行相应的处理。若没有配置该探针，默认就是 success。</li> <li>ReadinessProbe：一般用于探测容器内的程序是否健康，它的返回值如果为 success，那么久代表这个容器已经完成启动，并且程序已经是可以接受流量的状态。</li> </ul> <h3 id="14-pod-探针的检测方式">1.4 Pod 探针的检测方式</h3> <ul> <li>ExecAction：在容器内执行一个命令，如果返回值为 0，则认为容器健康。</li> <li>TCPSocketAction：通过 TCP 连接检查容器内的端口是否是通的，如果是通的就认为容器健康。</li> <li>HTTPGetAction：通过应用程序暴露的 API 地址来检查程序是否是正常的，如果状态码为 200~400 之间，则认为容器健康。</li> </ul> <h3 id="15-探针检查参数配置">1.5 探针检查参数配置</h3> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">initialDelaySeconds</span><span class="pi">:</span> <span class="m">60</span> <span class="c1"># 初始化时间</span>
+<span class="na">timeoutSeconds</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># 超时时间</span>
+<span class="na">periodSeconds</span><span class="pi">:</span> <span class="m">5</span> <span class="c1"># 检测间隔</span>
+<span class="na">successThreshold</span><span class="pi">:</span> <span class="m">1</span> <span class="c1"># 检查成功为1次表示就绪</span>
+<span class="na">failureThreshold</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># 检测失败2次表示未就绪</span>
+</code></pre></div></div> <p>Prestop：先去请求 eureka 接口，把自己的 IP 地址和端口号，进行下线，eureka 从注册表中删除该应用的 IP 地址。然后容器进行 sleep 90；kill <code class="language-plaintext highlighter-rouge">pgrep java</code></p> <h2 id="第三章-rcrs">第三章 RC&amp;RS</h2> <h3 id="11-replication-controller-和-replicaset">1.1 Replication Controller 和 ReplicaSet</h3> <p>Replication Controller（复制控制器，RC）和 ReplicaSet（复制集，RS）是两种简单部署 Pod 的方式。因为在生产环境中，主要使用更高级的 Deployment 等方式进行 Pod 的管理和部署，所以本节只对 Replication Controller 和 Replica Set 的部署方式进行简单介绍。</p> <h4 id="111-replication-controller">1.1.1 Replication Controller</h4> <p>Replication Controller（简称 RC）可确保 Pod 副本数达到期望值，也就是 RC 定义的数量。换句话说，Replication Controller 可确保一个 Pod 或一组同类 Pod 总是可用。 如果存在的 Pod 大于设定的值，则 Replication Controller 将终止额外的 Pod。如果太小，Replication Controller 将启动更多的 Pod 用于保证达到期望值。与手动创建 Pod 不同的是，用 Replication Controller 维护的 Pod 在失败、删除或终止时会自动替换。因此即使应用程序只需要一个 Pod，也应该使用 Replication Controller 或其他方式管理。Replication Controller 类似于进程管理程序，但是 Replication Controller 不是监视单个节点上的各个进程，而是监视多个节点上的多个 Pod。 定义一个 Replication Controller 的示例如下。</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">ReplicationController</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+          <span class="na">image</span><span class="pi">:</span> <span class="s">nginx</span>
+          <span class="na">ports</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">80</span>
+</code></pre></div></div> <h4 id="112-replicaset">1.1.2 ReplicaSet</h4> <p>ReplicaSet 是支持基于集合的标签选择器的下一代 Replication Controller，它主要用作 Deployment 协调创建、删除和更新 Pod，和 Replication Controller 唯一的区别是，ReplicaSet 支持标签选择器。在实际应用中，虽然 ReplicaSet 可以单独使用，但是一般建议使用 Deployment 来自动管理 ReplicaSet，除非自定义的 Pod 不需要更新或有其他编排等。 定义一个 ReplicaSet 的示例如下：</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">ReplicaSet</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">frontend</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">guestbook</span>
+    <span class="na">tier</span><span class="pi">:</span> <span class="s">frontend</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="c1"># modify replicas according to your case</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">tier</span><span class="pi">:</span> <span class="s">frontend</span>
+    <span class="na">matchExpressions</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="pi">{</span> <span class="nv">key</span><span class="pi">:</span> <span class="nv">tier</span><span class="pi">,</span> <span class="nv">operator</span><span class="pi">:</span> <span class="nv">In</span><span class="pi">,</span> <span class="nv">values</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">frontend</span><span class="pi">]</span> <span class="pi">}</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">guestbook</span>
+        <span class="na">tier</span><span class="pi">:</span> <span class="s">frontend</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">php-redis</span>
+          <span class="na">image</span><span class="pi">:</span> <span class="s">gcr.io/google_samples/gb-frontend:v3</span>
+          <span class="na">resources</span><span class="pi">:</span>
+            <span class="na">requests</span><span class="pi">:</span>
+              <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+              <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
+          <span class="na">env</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">GET_HOSTS_FROM</span>
+              <span class="na">value</span><span class="pi">:</span> <span class="s">dns</span>
+              <span class="c1"># If your cluster config does not include a dns service, then to</span>
+              <span class="c1"># instead access environment variables to find service host</span>
+              <span class="c1"># info, comment out the 'value: dns' line above, and uncomment the</span>
+              <span class="c1"># line below.</span>
+              <span class="c1"># value: env</span>
+          <span class="na">ports</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">80</span>
+</code></pre></div></div> <p>Replication Controller 和 ReplicaSet 的创建删除和 Pod 并无太大区别，Replication Controller 目前几乎已经不在生产环境中使用，ReplicaSet 也很少单独被使用，都是使用更高级的资源 Deployment、DaemonSet、StatefulSet 进行管理 Pod。</p> <h2 id="第四章-deployment">第四章 Deployment</h2> <h3 id="11-deployment-概念">1.1 Deployment 概念</h3> <p>用于部署无状态的服务，这个最常用的控制器。一般用于管理维护企业内部无状态的微服务，比如 configserver、zuul、springboot。他可以管理多个副本的 Pod 实现无缝迁移、自动扩容缩容、自动灾难恢复、一键回滚等功能。</p> <h3 id="12-创建一个-deployment">1.2 创建一个 Deployment</h3> <p>手动创建：kubectl create deployment nginx –image=nginx:1.15.2 从文件创建：</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">annotations</span><span class="pi">:</span>
+    <span class="na">deployment.kubernetes.io/revision</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+  <span class="na">creationTimestamp</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2020-09-19T02:41:11Z"</span>
+  <span class="na">generation</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">progressDeadlineSeconds</span><span class="pi">:</span> <span class="m">600</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">2</span> <span class="c1">#副本数</span>
+  <span class="na">revisionHistoryLimit</span><span class="pi">:</span> <span class="m">10</span> <span class="c1"># 历史记录保留的个数</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+  <span class="na">strategy</span><span class="pi">:</span>
+    <span class="na">rollingUpdate</span><span class="pi">:</span>
+      <span class="na">maxSurge</span><span class="pi">:</span> <span class="s">25%</span>
+      <span class="na">maxUnavailable</span><span class="pi">:</span> <span class="s">25%</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">RollingUpdate</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">creationTimestamp</span><span class="pi">:</span> <span class="kc">null</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:1.15.2</span>
+          <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">IfNotPresent</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+          <span class="na">resources</span><span class="pi">:</span> <span class="pi">{}</span>
+          <span class="na">terminationMessagePath</span><span class="pi">:</span> <span class="s">/dev/termination-log</span>
+          <span class="na">terminationMessagePolicy</span><span class="pi">:</span> <span class="s">File</span>
+      <span class="na">dnsPolicy</span><span class="pi">:</span> <span class="s">ClusterFirst</span>
+      <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">Always</span>
+      <span class="na">schedulerName</span><span class="pi">:</span> <span class="s">default-scheduler</span>
+      <span class="na">securityContext</span><span class="pi">:</span> <span class="pi">{}</span>
+      <span class="na">terminationGracePeriodSeconds</span><span class="pi">:</span> <span class="m">30</span>
+</code></pre></div></div> <p>状态解析：</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get deploy <span class="nt">-owide</span>
+</code></pre></div></div> <ul> <li>NAME： Deployment 名称</li> <li>READY：Pod 的状态，已经 Ready 的个数</li> <li>UP-TO-DATE：已经达到期望状态的被更新的副本数</li> <li>AVAILABLE：已经可以用的副本数</li> <li>AGE：显示应用程序运行的时间</li> <li>CONTAINERS：容器名称</li> <li>IMAGES：容器的镜像</li> <li>SELECTOR：管理的 Pod 的标签</li> </ul> <h3 id="13-deployment-的更新">1.3 Deployment 的更新</h3> <p>更改 deployment 的镜像并记录：</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:1.15.3 –record
+</code></pre></div></div> <p>查看更新过程：</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl rollout status deploy nginx
+</code></pre></div></div> <p>或者使用 describe 查看：</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe deploy nginx
+</code></pre></div></div> <h3 id="14-deployment-回滚">1.4 Deployment 回滚</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 执行更新操作</span>
+kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:787977da <span class="nt">--record</span>
+<span class="c"># 查看历史版本</span>
+kubectl rollout <span class="nb">history </span>deploy nginx
+<span class="c"># 回滚到上一个版本</span>
+kubectl rollout undo deploy nginx
+<span class="c"># 进行多次更新</span>
+kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:787977da <span class="nt">--record</span>
+kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:787977dadaa <span class="nt">--record</span>
+kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:787977xxxxxdadaa <span class="nt">--record</span>
+kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:787977dadxxxxxdadaa <span class="nt">--record</span>
+<span class="c"># 查看历史记录</span>
+kubectl  rollout <span class="nb">history </span>deploy nginx
+<span class="c"># 查看指定版本的详细信息</span>
+kubectl rollout <span class="nb">history </span>deploy nginx <span class="nt">--revision</span><span class="o">=</span>5
+<span class="c"># 回滚到执行的版本</span>
+kubectl rollout undo deploy nginx <span class="nt">--to-revision</span><span class="o">=</span>5
+<span class="c"># 查看deploy状态</span>
+kubectl get deploy <span class="nt">-oyaml</span>
+</code></pre></div></div> <h3 id="15-deployment-的暂停和恢复">1.5 Deployment 的暂停和恢复</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Deployment 暂停功能</span>
+kubectl rollout pause deployment nginx
+kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:1.15.3 <span class="nt">--record</span>
+<span class="c"># 进行第二次配置变更</span>
+<span class="c"># 添加内存CPU配置</span>
+kubectl <span class="nb">set </span>resources deploy nginx <span class="nt">-c</span> nginx <span class="nt">--limits</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>200m,memory<span class="o">=</span>128Mi <span class="nt">--requests</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>10m,memory<span class="o">=</span>16Mi
+<span class="c"># 查看pod是否被更新</span>
+kubectl get po
+kubectl rollout resume deploy nginx
+kubectl get rs
+</code></pre></div></div> <h3 id="16-deployment-注意事项">1.6 Deployment 注意事项</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># kubectl get deploy nginx -oyaml</span>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: <span class="s2">"12"</span>
+    kubernetes.io/change-cause:
+      kubectl <span class="nb">set </span>image deploy nginx <span class="nv">nginx</span><span class="o">=</span>nginx:1.15.3
+      <span class="nt">--record</span><span class="o">=</span><span class="nb">true
+  </span>creationTimestamp: <span class="s2">"2020-09-19T02:41:11Z"</span>
+  generation: 19
+  labels:
+    app: nginx
+  name: nginx
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    <span class="nb">type</span>: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: nginx:1.15.3
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 10m
+              memory: 16Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: <span class="o">{}</span>
+      terminationGracePeriodSeconds: 30
+</code></pre></div></div> <ul> <li>spec.revisionHistoryLimit：设置保留 RS 旧的 revision 的个数，设置为 0 的话，不保留历史数据</li> <li>spec.minReadySeconds：可选参数，指定新创建的 Pod 在没有任何容器崩溃的情况下视为 Ready 最小的秒数，默认为 0，即一旦被创建就视为可用。</li> <li>滚动更新的策略： <ul> <li>spec.strategy.type：更新 deployment 的方式，默认是 RollingUpdate <ul> <li>RollingUpdate：滚动更新，可以指定 maxSurge 和 maxUnavailable <ul> <li>maxUnavailable：指定在回滚或更新时最大不可用的 Pod 的数量，可选字段，默认 25%，可以设置成数字或百分比，如果该值为 0，那么 maxSurge 就不能 0</li> <li>maxSurge：可以超过期望值的最大 Pod 数，可选字段，默认为 25%，可以设置成数字或百分比，如果该值为 0，那么 maxUnavailable 不能为 0</li> </ul> </li> <li>Recreate：重建，先删除旧的 Pod，在创建新的 Pod</li> </ul> </li> </ul> </li> </ul>]]></content><author><name></name></author><category term="kubernetes"/><summary type="html"><![CDATA[kubernetes]]></summary></entry><entry><title type="html">ubuntu 18.04.4 安装JDK</title><link href="https://quaner-dev.github.io/blog/2024/Ubuntu-18.04.4-%E5%AE%89%E8%A3%85JDK/" rel="alternate" type="text/html" title="ubuntu 18.04.4 安装JDK"/><published>2024-05-01T00:00:00+00:00</published><updated>2024-05-01T00:00:00+00:00</updated><id>https://quaner-dev.github.io/blog/2024/Ubuntu%2018.04.4%20%E5%AE%89%E8%A3%85JDK</id><content type="html" xml:base="https://quaner-dev.github.io/blog/2024/Ubuntu-18.04.4-%E5%AE%89%E8%A3%85JDK/"><![CDATA[<h1 id="ubuntu-18044-安装jdk">Ubuntu 18.04.4 安装JDK</h1> <h2 id="下载二进制jdk">下载二进制JDK</h2> <p><a href="https://www.oracle.com/java/technologies/downloads/#java8">官网下载地址</a> 下载对应的按转包</p> <h2 id="放置到对用户目录">放置到对用户目录</h2> <p>mkdir /usr/lib/jdk tar xvf jdk-8u411-linux64.tar.gz -C /usr/lib/jdk</p> <h2 id="添加环境变量">添加环境变量</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/profile
 </code></pre></div></div> <p>在文件末尾增加</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># java env</span>
 <span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jdk/jdk1.8.0_411
 <span class="nb">export </span><span class="nv">JRE_HOME</span><span class="o">=</span><span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/jre
@@ -66,19 +355,4 @@ rmp <span class="nt">-i</span> xxx.rpm
 <span class="c"># 替换&lt;packagename&gt;为需要安装的包</span>
 <span class="nb">sudo </span>apt-get download <span class="si">$(</span>apt-cache depends <span class="nt">--recurse</span> <span class="nt">--no-recommends</span> <span class="nt">--no-suggests</span> <span class="nt">--no-conflicts</span> <span class="nt">--no-breaks</span> <span class="nt">--no-replaces</span> <span class="nt">--no-enhances</span> &lt;packagename&gt; | <span class="nb">grep</span> <span class="s2">"^</span><span class="se">\w</span><span class="s2">"</span> | <span class="nb">sort</span> <span class="nt">-u</span><span class="si">)</span>
 </code></pre></div></div> <h2 id="下载安装包">下载安装包</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-d</span> &lt;packagename&gt;
-</code></pre></div></div>]]></content><author><name></name></author><category term="apt"/><summary type="html"><![CDATA[ubuntu下载离线安装包]]></summary></entry><entry><title type="html">Ubuntu设置root用户登录</title><link href="https://quaner-dev.github.io/blog/2023/ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/" rel="alternate" type="text/html" title="Ubuntu设置root用户登录"/><published>2023-11-24T00:00:00+00:00</published><updated>2023-11-24T00:00:00+00:00</updated><id>https://quaner-dev.github.io/blog/2023/ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95</id><content type="html" xml:base="https://quaner-dev.github.io/blog/2023/ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/"><![CDATA[<h1 id="ubuntu设置root用户登录">ubuntu设置root用户登录</h1> <h2 id="设置root用户密码">设置root用户密码</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 设置root用户密码</span>
-<span class="c"># 输入两次root用户密码，最终返回password updated successfully，则表示密码设定成功</span>
-<span class="nb">sudo </span>passwd root
-</code></pre></div></div> <h2 id="设置root用户登录">设置root用户登录</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 修改sshd配置文件</span>
-<span class="nb">sudo </span>vim /etc/ssh/sshd_config
-
-<span class="c"># 反注释PermitRootLogin，并修改参数为yes</span>
-PermitRootLogin <span class="nb">yes</span>
-<span class="c"># 反注释PasswordAuthentication，并修改参数为yes</span>
-PasswordAuthentication <span class="nb">yes</span>
-
-<span class="c"># 按ESC，保存sshd_config</span>
-:wq
-</code></pre></div></div> <h2 id="重启ssh服务">重启SSH服务</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 重启ssh服务</span>
-<span class="nb">sudo </span>systemctl restart sshd
-</code></pre></div></div> <h2 id="root用户登录测试">root用户登录测试</h2> <p>使用root账户直接登录服务器，登录成功则完成设置</p>]]></content><author><name></name></author><category term="ssh"/><summary type="html"><![CDATA[Ubuntu设定root登录]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="apt"/><summary type="html"><![CDATA[ubuntu下载离线安装包]]></summary></entry></feed>
