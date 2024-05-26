@@ -1,22 +1,22 @@
 {
   "basics": {
-    "name": "刘炳全",
-    "label": "解决方案工程师",
+    "name": "Albert Einstein",
+    "label": "Scientist",
     "image": "",
-    "email": "217quaner@gmail.com",
-    "phone": "(86) 18612660269",
-    "url": "https://quaner-dev.github.io/",
+    "email": "albert@einstein.de",
+    "phone": "(912) 123-4567",
+    "url": "https://alshedivat.github.io/al-folio/",
     "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     "location": {
-      "address": "2712 Broadway St - todo",
-      "postalCode": "CA 94115 - todo",
-      "city": "Karamay",
-      "countryCode": "CN",
-      "region": "Xinjiang"
+      "address": "2712 Broadway St",
+      "postalCode": "CA 94115",
+      "city": "San Francisco",
+      "countryCode": "US",
+      "region": "California"
     },
     "profiles": [
       {
-        "network": "Twitter - need change to wechat",
+        "network": "Twitter",
         "username": "AlbertEinstein",
         "url": "https://twitter.com/AlbertEinstein"
       }
@@ -24,33 +24,36 @@
   },
   "work": [
     {
-      "name": "北京瑞莱智安科技有限公司",
-      "position": "解决方案工程师",
-      "url": "",
-      "startDate": "2023-05",
-      "endDate": "至今",
-      "summary": "负责三方数据对接，使用Flask编写脚本；修改Shell脚本以适应现场环境，运用Shell工具进行日志分析、监控、备份等工作；完成业务系统的软硬件交付；负责性能调优、软件测试与中间件性能测试；积极与客户沟通需求，跟进项目进度。",
+      "name": "Institute for Advanced Study, Princeton University",
+      "position": "Professor of Theoretical Physics",
+      "url": "https://example.com",
+      "startDate": "1933-01-01",
+      "endDate": "1955-01-01",
+      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
       "highlights": ["Relativity"]
-    },
+    }
+  ],
+  "volunteer": [
     {
-      "name": "北京依图网络科技有限公司",
-      "position": "解决方案工程师",
-      "url": "https://www.yitutech.com/",
-      "startDate": "2020-10",
-      "endDate": "2023-05",
-      "summary": "负责项目范围评估、资源协调与计划制定，确保项目目标达成；转化并实现客户需求，引导合理开发；测试公司产品并提供专业报告；部署项目并技术支持，保障业务运行；支撑全国项目并利用Grafana监控分析产品性能。",
-      "highlights": ["Relativity"]
+      "organization": "People's Climate March",
+      "location": "Zurich, Switzerland",
+      "position": "Lead Organizer",
+      "url": "https://example.com",
+      "startDate": "2014-04-01",
+      "endDate": "2015-07-01",
+      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
     }
   ],
   "education": [
     {
-      "institution": "天津科技大学",
-      "location": "天津",
+      "institution": "University of Zurich, Zurich, Switzerland",
+      "location": "Zurich, Switzerland",
       "url": "https://www.uzh.ch/",
-      "area": "自动化",
-      "studyType": "本科",
-      "startDate": "2014-06",
-      "endDate": "2018-06",
+      "area": "Software Development",
+      "studyType": "PhD",
+      "startDate": "1905-01-01",
+      "endDate": "1905-01-01",
       "score": "10",
       "courses": ["Theory of Relativity"]
     }
