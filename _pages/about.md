@@ -25,12 +25,10 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-大家好，我是刘炳全，出生于1996年11月21日。作为一名交付工程师和软件工程师，我在职业生涯中积累了丰富的经验，特别是在安防行业。
+大家好，我是刘炳全。我出生于1996年11月21日，拥有天津科技大学电子信息及其自动化专业的本科学历。
 
-我的本科学习阶段在天津科技大学度过，主修电子信息及其自动化专业。这段学习经历不仅为我奠定了坚实的理论基础，也激发了我对技术的热爱和追求。
+在职业上，我既是交付工程师也是软件工程师。我拥有2年的Python Web软件开发经验和3年的安防行业交付工程师经验。我熟练掌握Python、Shell编程语言，以及Docker、Kubernetes等运维工具，能够独立完成项目交付工作。
 
-在工作经验方面，我拥有2年的Python Web软件开发经验，这使我熟练掌握了Python编程语言，并能够高效地开发Web应用。此外，我还积累了3年的安防行业交付工程师经验，对安防行业的技术和应用有着深入的了解。我熟练掌握Shell编程语言以及Docker、Kubernetes等运维工具，能够独立、出色地完成项目交付工作，确保项目的顺利进行。
+在个人兴趣方面，我热爱旅行、游泳、羽毛球和滑雪，这些活动不仅丰富了我的生活，也锻炼了我的身心。
 
-除了专业技能，我还热爱旅行、游泳、羽毛球和滑雪。旅行让我领略了世界各地的风土人情，游泳和羽毛球则是我保持身体健康的方式，而滑雪则是我挑战自我、享受速度的激情所在。
-
-在未来的工作中，我将继续发挥我的专业技能和优势，不断提升自己的能力，为公司的发展贡献更多的力量。同时，我也期待与更多的朋友交流学习，共同进步。谢谢大家！
+我期待与各位在职业和兴趣上都能有所交流，共同进步。谢谢大家！
