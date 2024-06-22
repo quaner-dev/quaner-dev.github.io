@@ -43,3 +43,13 @@ These instructions are for Kubernetes v1.30.
    sudo systemctl enable --now kubelet
    The kubelet is now restarting every few seconds, as it waits in a crashloop for kubeadm to tell it what to do
    ```
+
+
+我自己部署的方式 - 使用阿里云
+
+sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg # 通过阿里云加入key
+echo "deb http://mirrors.aliyun.com/kubernetes/apt kubernetes-xenial main
+" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
