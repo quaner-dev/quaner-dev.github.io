@@ -1,4 +1,4 @@
-# ubuntu 设置 root 用户登录
+# Ubuntu 设置 root 用户登录
 
 ## 设置 root 用户密码
 
