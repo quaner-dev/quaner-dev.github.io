@@ -1,0 +1,6 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="ubuntu-防止合笔记本后挂起">Ubuntu 防止合笔记本后挂起</h1> <h2 id="编辑-logindconf">编辑 logind.conf</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/systemd/logind.conf
+</code></pre></div></div> <h2 id="将以下参数修改为-ignore">将以下参数修改为 ignore</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HandleLidSwitch</span><span class="o">=</span>ignore
+<span class="nv">HandleLidSwitchExternalPower</span><span class="o">=</span>ignore
+<span class="nv">HandleLidSwitchDocked</span><span class="o">=</span>ignore
+</code></pre></div></div> <h2 id="重启-systemd-logind-服务">重启 systemd-logind 服务</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart systemd-logind
+</code></pre></div></div> </body></html>

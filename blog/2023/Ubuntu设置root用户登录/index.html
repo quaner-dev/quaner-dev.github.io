@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="ubuntu-设置-root-用户登录">Ubuntu 设置 root 用户登录</h1> <h2 id="设置-root-用户密码">设置 root 用户密码</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 设置root用户密码</span>
+<span class="c"># 输入两次root用户密码，最终返回password updated successfully，则表示密码设定成功</span>
+<span class="nb">sudo </span>passwd root
+</code></pre></div></div> <h2 id="设置-root-用户登录">设置 root 用户登录</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 修改sshd配置文件</span>
+<span class="nb">sudo </span>vim /etc/ssh/sshd_config
+
+<span class="c"># 反注释PermitRootLogin，并修改参数为yes</span>
+PermitRootLogin <span class="nb">yes</span>
+<span class="c"># 反注释PasswordAuthentication，并修改参数为yes</span>
+PasswordAuthentication <span class="nb">yes</span>
+
+<span class="c"># 按ESC，保存sshd_config</span>
+:wq
+</code></pre></div></div> <h2 id="重启-ssh-服务">重启 SSH 服务</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 重启ssh服务</span>
+<span class="nb">sudo </span>systemctl restart sshd
+</code></pre></div></div> <h2 id="root-用户登录测试">root 用户登录测试</h2> <p>使用 root 账户直接登录服务器，登录成功则完成设置</p> </body></html>

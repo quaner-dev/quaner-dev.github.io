@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="常用-es-操作汇总">常用 ES 操作汇总</h1> <h2 id="查询-es-数据">查询 ES 数据</h2> <p>URL：<code class="language-plaintext highlighter-rouge">http://IP:PORT/person_dynamic/_search</code></p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"bool"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"must"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"captureTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"gt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-16 13:00:00"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-16 13:10:00"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h2 id="删除-es-数据">删除 ES 数据</h2> <p>URL：<code class="language-plaintext highlighter-rouge">http://IP:PORT/person_dynamic/_delete_by_query</code></p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"bool"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"must"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"captureTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"gt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-16 13:00:00"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-16 13:10:00"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h2 id="查询索引结构">查询索引结构</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="s1">'http://IP:PORT/test04/_mapping'</span>
+</code></pre></div></div> <h2 id="查询所有索引库">查询所有索引库</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="s1">'http://IP:PORT/_cat/indices'</span>
+</code></pre></div></div> </body></html>

@@ -1,0 +1,4 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="mmistakes-操作汇总">MMistakes 操作汇总</h1> <h2 id="git-更新-mmistakes-模板">Git 更新 MMistakes 模板</h2> <h3 id="添加远程分支">添加远程分支</h3> <p>在进行 MMistakes 之前，需要确保有一个 upstream remote，使用以下命令添加</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add upstream https://github.com/mmistakes/minimal-mistakes.git
+</code></pre></div></div> <h3 id="拉取更新">拉取更新</h3> <p>切换到 master 分支上</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+</code></pre></div></div> <p>拉取并更新远程分支中代码</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull upstream master
+</code></pre></div></div> <h3 id="修复冲突">修复冲突</h3> <p>如果你对于你的 MMistakes 进行了定制，那么可能会有一些冲突，请保证你修复所有冲突后再进行 commit</p> </body></html>

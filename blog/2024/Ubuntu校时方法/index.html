@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="校时方法">校时方法</h1> <h2 id="手动设置时间">手动设置时间</h2> <h3 id="检查系统时间">检查系统时间</h3> <p>使用 date 命令检查系统时间</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span>
+</code></pre></div></div> <h3 id="设定时区">设定时区</h3> <p>使用 timedatectl 手动设定时区为上海</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>timedatectl set-timezone Asia/Shanghai
+</code></pre></div></div> <h3 id="手动设定系统时间">手动设定系统时间</h3> <p>使用 date 手动设定系统时间</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span> <span class="nt">-s</span> <span class="s2">"2024-07-31 12:15:45"</span>
+</code></pre></div></div> <h3 id="回写硬件时间">回写硬件时间</h3> <p>将系统时间回写硬件时间</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hwclock <span class="nt">--systohc</span>
+</code></pre></div></div> <h2 id="ubuntu-2004-自动同步网络时间">Ubuntu 20.04 自动同步网络时间</h2> <h3 id="启用-timedatectl-时间同步服务">启用 timedatectl 时间同步服务</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>timedatectl set-ntp <span class="nb">true</span>
+</code></pre></div></div> <h3 id="修改-timedatectl-配置文件">修改 timedatectl 配置文件</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 在NTP=后增加NTP服务地址，用来进行时间同步</span>
+vim /etc/systemd/timesyncd.conf
+</code></pre></div></div> <h2 id="ubuntu-1804-自动同步网络时间">Ubuntu 18.04 自动同步网络时间</h2> <h3 id="启用-ntp-时间同步服务">启用 ntp 时间同步服务</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start ntp
+systemctl <span class="nb">enable </span>ntp
+</code></pre></div></div> <h3 id="修改-ntp-配置文件">修改 ntp 配置文件</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 在server后添加NTP服务地址，用来进行时间同步</span>
+vim /etc/ntp.conf
+</code></pre></div></div> </body></html>

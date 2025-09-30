@@ -1,0 +1,7 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="netplan-gateway4-弃用报错">NetPlan gateway4 弃用报错</h1> <h2 id="问题">问题</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gateway4 has been deprecated, use default routes instead.
+See the <span class="s1">'Default routes'</span> section of the documentation <span class="k">for </span>more details.
+</code></pre></div></div> <h2 id="问题原因">问题原因</h2> <p>此错误代表 gateway4 已经被弃用，需要更换为 to: default 和 via 来替代</p> <h2 id="解决方法">解决方法</h2> <ol> <li> <p>替代前</p> <div class="language-yaml highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="na">gateway4</span><span class="pi">:</span> <span class="s">192.168.1.1</span>
+</code></pre></div> </div> </li> <li> <p>替代后</p> <div class="language-yaml highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="na">route</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">to</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">via</span><span class="pi">:</span> <span class="s">192.168.1.1</span>
+</code></pre></div> </div> </li> </ol> </body></html>

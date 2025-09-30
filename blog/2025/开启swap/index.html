@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="开启-swap">开启 swap</h1> <h2 id="开启-swap-并永久生效">开启 swap 并永久生效</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 创建swap文件</span>
+fallocate <span class="nt">-l</span> 5G /swapfile
+
+<span class="c"># 修改swapfile权限</span>
+<span class="nb">chmod </span>600 /swapfile
+
+<span class="c"># 设置swap文件</span>
+mkswap /swapfile
+
+<span class="c"># 启用swap文件</span>
+swapon /swapfile
+
+<span class="c"># 验证swap是否激活</span>
+swapon <span class="nt">--show</span>
+
+<span class="c"># 添加swap到fstab中永久生效</span>
+<span class="nb">echo</span> <span class="s1">'/swapfile none swap sw 0 0'</span> | <span class="nb">tee</span> <span class="nt">-a</span> /etc/fstab
+
+<span class="c"># 设定swap配置并永久生效</span>
+<span class="nb">echo</span> <span class="s1">'vm.swappiness=100'</span> | <span class="nb">tee</span> <span class="nt">-a</span> /etc/sysctl.conf
+</code></pre></div></div> </body></html>

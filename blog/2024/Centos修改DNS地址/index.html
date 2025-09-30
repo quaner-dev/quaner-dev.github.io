@@ -1,0 +1,6 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="centos-修改-dns-地址">Centos 修改 DNS 地址</h1> <h2 id="修改-dns-地址">修改 DNS 地址</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/resolv.conf
+
+<span class="c"># 新增内容</span>
+nameserver 223.5.5.5 <span class="c"># 阿里云公共dns</span>
+nameserver 8.8.8.8 <span class="c"># Google公共dns</span>
+</code></pre></div></div> </body></html>

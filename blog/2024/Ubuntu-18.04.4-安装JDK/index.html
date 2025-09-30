@@ -1,0 +1,9 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="ubuntu-18044-安装-jdk">Ubuntu 18.04.4 安装 JDK</h1> <h2 id="下载二进制-jdk">下载二进制 JDK</h2> <p><a href="https://www.oracle.com/java/technologies/downloads/#java8" rel="external nofollow noopener" target="_blank">官网下载地址</a> 下载对应的按转包</p> <h2 id="放置到对用户目录">放置到对用户目录</h2> <p>mkdir /usr/lib/jdk tar xvf jdk-8u411-linux64.tar.gz -C /usr/lib/jdk</p> <h2 id="添加环境变量">添加环境变量</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/profile
+</code></pre></div></div> <p>在文件末尾增加</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># java env</span>
+<span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jdk/jdk1.8.0_411
+<span class="nb">export </span><span class="nv">JRE_HOME</span><span class="o">=</span><span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/jre
+<span class="nb">export </span><span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/lib:<span class="k">${</span><span class="nv">JRE_HOME</span><span class="k">}</span>/lib
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/bin:<span class="nv">$PATH</span>
+</code></pre></div></div> <h2 id="生效环境变量">生效环境变量</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /etc/profile
+</code></pre></div></div> <h2 id="测试-java-命令">测试 java 命令</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-version</span>
+</code></pre></div></div> </body></html>

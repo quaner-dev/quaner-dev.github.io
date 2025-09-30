@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="python-类型注解">Python 类型注解</h1> <h2 id="类型注解描述">类型注解描述</h2> <p>Python 3.5 版本后引入 Typing 模块为 Python 静态类型注解提供了支持。其只要作用于增强代码可读性和维护性，并不影响代码运行</p> <h2 id="静态类型检查">静态类型检查</h2> <p>Python 的类型注解本身不进行类型检查，但是可以借助第三方工具对代码中的静态类型进行检查，常用的静态类型检查有 mypy 和 pyright（适用于 Vscode 编辑器）</p> <h2 id="类型注解语法">类型注解语法</h2> <p>arg_type 代表参数类型，return_type 代表返回值类型</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">arg_type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">return_type</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">xxx</span>
+</code></pre></div></div> <h2 id="类型注解">类型注解</h2> <h3 id="内置类型">内置类型</h3> <p>str 为字符串类型，int 为整数类型，float 为浮点数类型，bool 为布尔类型</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arg3</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">arg4</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="list-类型">List 类型</h3> <p>入参 arg1 为 List 列表类型，列表中的每个元素都为 int 整数类型，同时返回为为 None</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="dict-类型">Dict 类型</h3> <p>入参 arg1 为 Dict 字典类型，字典中的元素的键为 str 类型，值为 int 类型，同时返回为为 None</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="tuple-类型">Tuple 类型</h3> <p>入参 arg1 为 Tuple 元组类型，元组中的每个元素都为 str 类型，同时返回为为 None</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="set-类型">Set 类型</h3> <p>入参 arg1 为 Set 集合类型，集合中的每个元素都为 int 类型，同时返回为为 None</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Set</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="any-类型">Any 类型</h3> <p>入参 arg1 为 Any 类型，该参数可以是任何类型的数据，同时返回为为 None</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="union-类型">Union 类型</h3> <p>入参 arg1 为 Union 类型，标识该参数可以接收多种类型，同时返回为为 None</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> <h3 id="optional-类型">Optional 类型</h3> <p>入参 arg1 为 Optional 类型，标识该参数可以是指定类型或者 None，同时返回为为 int</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div> </body></html>

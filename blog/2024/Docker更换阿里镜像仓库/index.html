@@ -1,0 +1,6 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="docker-更换阿里镜像仓库">Docker 更换阿里镜像仓库</h1> <h2 id="修改-daemonjson-文件">修改 daemon.json 文件</h2> <p>增加 registry-mirrors 镜像仓库</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"registry-mirrors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://rsk59qvc.mirror.aliyuncs.com"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h2 id="重启-docker">重启 docker</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl daemon-reload
+systemctl restart docker
+</code></pre></div></div> </body></html>

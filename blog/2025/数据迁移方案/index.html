@@ -1,0 +1,6 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="数据迁移方案">数据迁移方案</h1> <h2 id="停止-k8s-服务">停止 k8s 服务</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl stop kubelet
+systemctl stop docker
+</code></pre></div></div> <h2 id="同步文件夹到执行磁盘下">同步文件夹到执行磁盘下</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync <span class="nt">-avP</span> fse-sata /arachnid
+</code></pre></div></div> <h2 id="启动-k8s">启动 k8s</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start docker
+systemctl start kubelet
+</code></pre></div></div> </body></html>

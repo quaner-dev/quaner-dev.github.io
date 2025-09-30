@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="python-装饰器实现认证逻辑">Python 装饰器实现认证逻辑</h1> <h2 id="装饰器介绍">装饰器介绍</h2> <p>Python 装饰器是一种高级特性，用于在不修改原有代码结构钢的情况下，动态地修改或增强函数的行为。装饰器本质是一种能够接受函数作为输入，并返回一个新函数的高阶函数。</p> <h2 id="应用场景">应用场景</h2> <ol> <li>日志记录</li> <li>权限验证</li> <li>缓存</li> <li>事务管理</li> <li>性能监控</li> </ol> <h2 id="示例">示例</h2> <h3 id="示例展示">示例展示</h3> <p>以下使用认证逻辑，对装饰器进行说明</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 装饰器
+</span><span class="k">def</span> <span class="nf">auth</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># 上传逻辑前进行认证
+</span>        <span class="nf">before_call_code</span><span class="p">()</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="nf">after_call_code</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@auth</span>
+<span class="k">def</span> <span class="nf">upload_func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
+    <span class="c1"># 上传函数实现
+</span>    <span class="k">pass</span>
+
+<span class="nf">upload_func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">)</span>
+</code></pre></div></div> <h3 id="示例解析">示例解析</h3> <ol> <li>auth 是一个装饰器函数，接受函数 func 作为入参，并返回一个内部函数 wrapper，也就是在 func 外部嵌套了一个 wrapper 方法，在 wrapper 方法中可以进行一些 func 之外操作，之后调用 func 函数，并将结果返回；</li> <li>使用@auth 作为前缀，放到 upload_func 定义前，作为装饰器使用；</li> <li>在调用 update_fun(arg1, arg2)时，Python 会自动将 upload_fun 函数作为入参传入 auth 中，然后返回 wrapper 函数替换掉 upload_fun 方法。（也即将 update_fun(arg1, arg2)替换为 wrappern(arg1, arg2)执行）</li> </ol> </body></html>

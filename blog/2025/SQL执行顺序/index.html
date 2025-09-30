@@ -1,0 +1,3 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="sql-执行顺序">SQL 执行顺序</h1> <h2 id="书写顺序">书写顺序</h2> <pre><code class="language-txt">SELECT -&gt; DISTINCT -&gt; TOP -&gt; FROM -&gt; JOIN -&gt; ON -&gt; WHERE -&gt; GROUP BY -&gt; HAVING -&gt; ORDER BY
+</code></pre> <h2 id="执行顺序">执行顺序</h2> <pre><code class="language-txt">FROM -&gt; ON -&gt; JOIN -&gt; WHERE -&gt; GROUP BY -&gt; SUM、COUNT、MAX、AVG -&gt; HAVING -&gt; SELECT -&gt; DISTINCT -&gt; ORDER BY -&gt; TOP
+</code></pre> </body></html>

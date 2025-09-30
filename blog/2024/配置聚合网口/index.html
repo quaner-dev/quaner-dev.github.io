@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="配置聚合网口">配置聚合网口</h1> <h2 id="要求">要求</h2> <p>完成 OS 层面安装，进入到终端界面执行如下命令</p> <h2 id="修改配置文件">修改配置文件</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/netplan/01-netcfg.yaml
+</code></pre></div></div> <h2 id="在文件末尾中增加内容结果如下">在文件末尾中增加内容，结果如下</h2> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">network：</span>
+  <span class="s">version</span><span class="err">:</span> <span class="m">2</span>
+  <span class="na">renderer</span><span class="pi">:</span> <span class="s">networkd</span>
+
+  <span class="na">ethernets</span><span class="pi">:</span>
+    <span class="na">eno1</span><span class="pi">:</span> <span class="pi">{}</span> <span class="c1"># eno1代表网口名称，可以使用ifconfig -a查出网口名称，如果需要确认是哪个网口，可以使用ethtool -p [网口名称]，可以在点亮物理机上网口的灯</span>
+    <span class="na">eno2</span><span class="pi">:</span> <span class="pi">{}</span>
+
+  <span class="na">bonds</span><span class="pi">:</span>
+    <span class="na">bond0</span><span class="pi">:</span>
+      <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">xx.xx.xx.xx/24</span><span class="pi">]</span> <span class="c1"># 这里的xx.xx.xx.xx代表服务器IP，24代表掩码位，例如掩码位24对应子网掩码255.255.255.0</span>
+      <span class="na">gateway4</span><span class="pi">:</span> <span class="s">xx.xx.xx.xx</span> <span class="c1"># 这里的xx.xx.xx.xx代表网关IP</span>
+      <span class="na">interfaces</span><span class="pi">:</span> <span class="c1"># interfaces代表bond绑定的网口，填写的网口名称与ethernets中所填写的网口名称相同即可</span>
+        <span class="pi">-</span> <span class="s">eno1</span>
+        <span class="pi">-</span> <span class="s">eno2</span>
+      <span class="na">parameters</span><span class="pi">:</span>
+        <span class="na">mode</span><span class="pi">:</span> <span class="s">balance-rr</span> <span class="c1"># bond模式，模式种类如下章描述，根据需求调整参数即可</span>
+        <span class="na">mii-monitor-interval</span><span class="pi">:</span> <span class="m">100</span>
+</code></pre></div></div> <h2 id="bond-模式">bond 模式</h2> <table> <thead> <tr> <th>mode</th> <th>参数</th> <th>名称</th> </tr> </thead> <tbody> <tr> <td>mode=0</td> <td>balance-rr</td> <td>轮询均衡模式</td> </tr> <tr> <td>mode=1</td> <td>active-backup</td> <td>主备模式</td> </tr> <tr> <td>mode=2</td> <td>balance-xor</td> <td>平衡策略</td> </tr> <tr> <td>mode=3</td> <td>broadcast</td> <td>广播策略</td> </tr> <tr> <td>mode=4</td> <td>802.3ad</td> <td> </td> </tr> <tr> <td>mode=5</td> <td>balance-tlb</td> <td> </td> </tr> <tr> <td>mode=6</td> <td>balance-alb</td> <td> </td> </tr> </tbody> </table> </body></html>

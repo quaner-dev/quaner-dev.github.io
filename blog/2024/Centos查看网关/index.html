@@ -1,0 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="centos-查看网关">Centos 查看网关</h1> <h2 id="方法一使用-ip-命令查看网关">方法一：使用 ip 命令查看网关</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip route show default
+
+<span class="c"># 返回结果如下，其中via后的地址为网关地址</span>
+<span class="c"># default via 192.168.1.1 dev eth0 proto static</span>
+</code></pre></div></div> <h2 id="方法二使用-route-查看网关">方法二：使用 route 查看网关</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>route <span class="nt">-n</span>
+
+<span class="c"># 返回结果如下，其中Gateway为网关地址</span>
+<span class="c"># Destination  Gateway      Genmask  Flags  Metric  Ref  Use  Iface</span>
+<span class="c"># default      192.168.1.1  0.0.0.0  UG     0       0    0    eth0</span>
+</code></pre></div></div> </body></html>

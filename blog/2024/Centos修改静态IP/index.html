@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="centos-修改静态-ip">Centos 修改静态 IP</h1> <h2 id="查看网卡信息">查看网卡信息</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip addr <span class="c"># 找到需要修改的网卡名</span>
+</code></pre></div></div> <h2 id="修改网卡配置">修改网卡配置</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/sysconfig/network-scripts/ifcfg-xxx <span class="c"># xxx使用查找到的网卡名替换</span>
+</code></pre></div></div> <h3 id="修改内容">修改内容</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 修改字段</span>
+<span class="nv">BOOTPROTO</span><span class="o">=</span>static
+<span class="nv">ONBOOT</span><span class="o">=</span>YES
+
+<span class="c"># 新增字段</span>
+<span class="nv">IPADDR</span><span class="o">=</span>xxx <span class="c"># ip地址</span>
+<span class="nv">GATEWAY</span><span class="o">=</span>xxx <span class="c"># 网关地址</span>
+<span class="nv">NETMASK</span><span class="o">=</span>xxx <span class="c"># 子网掩码</span>
+</code></pre></div></div> <h2 id="重启网络服务">重启网络服务</h2> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service network restart
+</code></pre></div></div> </body></html>

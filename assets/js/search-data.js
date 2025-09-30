@@ -72,26 +72,290 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-a-post-with-plotly-js",
+            },{id: "post-minio-client命令",
         
-          title: "a post with plotly.js",
+          title: "Minio client命令",
         
-        description: "this is what included plotly.js code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/plotly/";
+            window.location.href = "/blog/2025/Minio-Client%E5%91%BD%E4%BB%A4/";
           
         },
-      },{id: "post-a-post-with-image-galleries",
+      },{id: "post-foxmail添加gmail",
         
-          title: "a post with image galleries",
+          title: "Foxmail添加gmail",
         
-        description: "this is what included image galleries could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/photo-gallery/";
+            window.location.href = "/blog/2025/Foxmail%E6%B7%BB%E5%8A%A0Gmail/";
+          
+        },
+      },{id: "post-dockerignore介绍",
+        
+          title: "Dockerignore介绍",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Dockerignore%E4%BB%8B%E7%BB%8D/";
+          
+        },
+      },{id: "post-部署k8s",
+        
+          title: "部署k8s",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/%E9%83%A8%E7%BD%B2K8S/";
+          
+        },
+      },{id: "post-优化sqlite性能",
+        
+          title: "优化sqlite性能",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/%E4%BC%98%E5%8C%96SQLite%E6%80%A7%E8%83%BD/";
+          
+        },
+      },{id: "post-ubuntu防止合笔记本后挂起",
+        
+          title: "Ubuntu防止合笔记本后挂起",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Ubuntu%E9%98%B2%E6%AD%A2%E5%90%88%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%90%8E%E6%8C%82%E8%B5%B7/";
+          
+        },
+      },{id: "post-django-q2启动multiple-queues",
+        
+          title: "Django q2启动multiple queues",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Django-Q2%E5%90%AF%E5%8A%A8Multiple-Queues/";
+          
+        },
+      },{id: "post-ubuntu永久修改dns",
+        
+          title: "Ubuntu永久修改dns",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Ubuntu%E6%B0%B8%E4%B9%85%E4%BF%AE%E6%94%B9DNS/";
+          
+        },
+      },{id: "post-数据迁移方案",
+        
+          title: "数据迁移方案",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/";
+          
+        },
+      },{id: "post-sql执行顺序",
+        
+          title: "Sql执行顺序",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/SQL%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/";
+          
+        },
+      },{id: "post-开启swap",
+        
+          title: "开启swap",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/%E5%BC%80%E5%90%AFswap/";
+          
+        },
+      },{id: "post-python线程-进程-协程的关系与区别和使用方式",
+        
+          title: "Python线程、进程、协程的关系与区别和使用方式",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Python%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B-%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/";
+          
+        },
+      },{id: "post-netplan-gateway4弃用报错",
+        
+          title: "Netplan gateway4弃用报错",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/NetPlan-gateway4%E5%BC%83%E7%94%A8%E6%8A%A5%E9%94%99/";
+          
+        },
+      },{id: "post-docker安装",
+        
+          title: "Docker安装",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Docker%E5%AE%89%E8%A3%85/";
+          
+        },
+      },{id: "post-python静态类型注解",
+        
+          title: "Python静态类型注解",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Python%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3/";
+          
+        },
+      },{id: "post-python装饰器实现认证逻辑",
+        
+          title: "Python装饰器实现认证逻辑",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Python%E8%A3%85%E9%A5%B0%E5%99%A8%E5%AE%9E%E7%8E%B0%E8%AE%A4%E8%AF%81%E9%80%BB%E8%BE%91/";
+          
+        },
+      },{id: "post-mmistakes操作汇总",
+        
+          title: "Mmistakes操作汇总",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/MMistakes%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/";
+          
+        },
+      },{id: "post-git命令汇总",
+        
+          title: "Git命令汇总",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Git%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/";
+          
+        },
+      },{id: "post-ubuntu校时方法",
+        
+          title: "Ubuntu校时方法",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Ubuntu%E6%A0%A1%E6%97%B6%E6%96%B9%E6%B3%95/";
+          
+        },
+      },{id: "post-docker更换阿里镜像仓库",
+        
+          title: "Docker更换阿里镜像仓库",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Docker%E6%9B%B4%E6%8D%A2%E9%98%BF%E9%87%8C%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/";
+          
+        },
+      },{id: "post-查询硬盘sn号",
+        
+          title: "查询硬盘sn号",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/%E6%9F%A5%E8%AF%A2%E7%A1%AC%E7%9B%98SN%E5%8F%B7/";
+          
+        },
+      },{id: "post-centos校时",
+        
+          title: "Centos校时",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Centos%E6%A0%A1%E6%97%B6/";
+          
+        },
+      },{id: "post-centos查看网关",
+        
+          title: "Centos查看网关",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Centos%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%85%B3/";
+          
+        },
+      },{id: "post-centos修改静态ip",
+        
+          title: "Centos修改静态ip",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Centos%E4%BF%AE%E6%94%B9%E9%9D%99%E6%80%81IP/";
+          
+        },
+      },{id: "post-centos修改yum源为阿里源",
+        
+          title: "Centos修改yum源为阿里源",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Centos%E4%BF%AE%E6%94%B9yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/";
+          
+        },
+      },{id: "post-centos修改dns地址",
+        
+          title: "Centos修改dns地址",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Centos%E4%BF%AE%E6%94%B9DNS%E5%9C%B0%E5%9D%80/";
           
         },
       },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
@@ -105,224 +369,125 @@ ninja.data = [{
             window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
           
         },
-      },{id: "post-a-post-with-tabs",
+      },{id: "post-配置聚合网口",
         
-          title: "a post with tabs",
+          title: "配置聚合网口",
         
-        description: "this is what included tabs in a post could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/tabs/";
+            window.location.href = "/blog/2024/%E9%85%8D%E7%BD%AE%E8%81%9A%E5%90%88%E7%BD%91%E5%8F%A3/";
           
         },
-      },{id: "post-a-post-with-typograms",
+      },{id: "post-二进制部署docker",
         
-          title: "a post with typograms",
+          title: "二进制部署docker",
         
-        description: "this is what included typograms code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/typograms/";
+            window.location.href = "/blog/2024/%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2Docker/";
           
         },
-      },{id: "post-a-post-that-can-be-cited",
+      },{id: "post-ubuntu-18-04-4-安装jdk",
         
-          title: "a post that can be cited",
+          title: "Ubuntu 18.04.4 安装jdk",
         
-        description: "this is what a post that can be cited looks like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/post-citation/";
+            window.location.href = "/blog/2024/Ubuntu-18.04.4-%E5%AE%89%E8%A3%85JDK/";
           
         },
-      },{id: "post-a-post-with-pseudo-code",
+      },{id: "post-常用正则表达式记录",
         
-          title: "a post with pseudo code",
+          title: "常用正则表达式记录",
         
-        description: "this is what included pseudo code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/pseudocode/";
+            window.location.href = "/blog/2024/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%B0%E5%BD%95/";
           
         },
-      },{id: "post-a-post-with-code-diff",
+      },{id: "post-lvm",
         
-          title: "a post with code diff",
+          title: "Lvm",
         
-        description: "this is how you can display code diffs",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/code-diff/";
+            window.location.href = "/blog/2024/LVM/";
           
         },
-      },{id: "post-a-post-with-advanced-image-components",
+      },{id: "post-检查硬件情况",
         
-          title: "a post with advanced image components",
+          title: "检查硬件情况",
         
-        description: "this is what advanced image components could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/advanced-images/";
+            window.location.href = "/blog/2024/%E6%A3%80%E6%9F%A5%E7%A1%AC%E4%BB%B6%E6%83%85%E5%86%B5/";
           
         },
-      },{id: "post-a-post-with-vega-lite",
+      },{id: "post-iptable封闭端口",
         
-          title: "a post with vega lite",
+          title: "Iptable封闭端口",
         
-        description: "this is what included vega lite code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/vega-lite/";
+            window.location.href = "/blog/2023/Iptable%E5%B0%81%E9%97%AD%E7%AB%AF%E5%8F%A3/";
           
         },
-      },{id: "post-a-post-with-geojson",
+      },{id: "post-ubuntu设置root用户登录",
         
-          title: "a post with geojson",
+          title: "Ubuntu设置root用户登录",
         
-        description: "this is what included geojson code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/geojson-map/";
+            window.location.href = "/blog/2023/Ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/";
           
         },
-      },{id: "post-a-post-with-echarts",
+      },{id: "post-ubuntu下载离线安装包",
         
-          title: "a post with echarts",
+          title: "Ubuntu下载离线安装包",
         
-        description: "this is what included echarts code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/echarts/";
+            window.location.href = "/blog/2023/Ubuntu%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85/";
           
         },
-      },{id: "post-a-post-with-chart-js",
+      },{id: "post-storcli使用文档",
         
-          title: "a post with chart.js",
+          title: "Storcli使用文档",
         
-        description: "this is what included chart.js code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/chartjs/";
+            window.location.href = "/blog/2023/Storcli%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/";
           
         },
-      },{id: "post-a-post-with-tikzjax",
+      },{id: "post-es命令汇总",
         
-          title: "a post with TikZJax",
+          title: "Es命令汇总",
         
-        description: "this is what included TikZ code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2023/tikzjax/";
-          
-        },
-      },{id: "post-a-post-with-bibliography",
-        
-          title: "a post with bibliography",
-        
-        description: "an example of a blog post with bibliography",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/post-bibliography/";
-          
-        },
-      },{id: "post-a-post-with-jupyter-notebook",
-        
-          title: "a post with jupyter notebook",
-        
-        description: "an example of a blog post with jupyter notebook",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/jupyter-notebook/";
-          
-        },
-      },{id: "post-a-post-with-custom-blockquotes",
-        
-          title: "a post with custom blockquotes",
-        
-        description: "an example of a blog post with custom blockquotes",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/custom-blockquotes/";
-          
-        },
-      },{id: "post-a-post-with-table-of-contents-on-a-sidebar",
-        
-          title: "a post with table of contents on a sidebar",
-        
-        description: "an example of a blog post with table of contents on a sidebar",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/sidebar-table-of-contents/";
-          
-        },
-      },{id: "post-a-post-with-audios",
-        
-          title: "a post with audios",
-        
-        description: "this is what included audios could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/audios/";
-          
-        },
-      },{id: "post-a-post-with-videos",
-        
-          title: "a post with videos",
-        
-        description: "this is what included videos could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/videos/";
-          
-        },
-      },{id: "post-displaying-beautiful-tables-with-bootstrap-tables",
-        
-          title: "displaying beautiful tables with Bootstrap Tables",
-        
-        description: "an example of how to use Bootstrap Tables",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/tables/";
-          
-        },
-      },{id: "post-a-post-with-table-of-contents",
-        
-          title: "a post with table of contents",
-        
-        description: "an example of a blog post with table of contents",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/table-of-contents/";
-          
-        },
-      },{id: "post-a-post-with-giscus-comments",
-        
-          title: "a post with giscus comments",
-        
-        description: "an example of a blog post with giscus comments",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2022/giscus-comments/";
+            window.location.href = "/blog/2023/ES%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/";
           
         },
       },{id: "post-displaying-external-posts-on-your-al-folio-blog",
@@ -336,94 +501,6 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "post-a-post-with-redirect",
-        
-          title: "a post with redirect",
-        
-        description: "you can also redirect to assets like pdf",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/assets/pdf/example_pdf.pdf";
-          
-        },
-      },{id: "post-a-post-with-diagrams",
-        
-          title: "a post with diagrams",
-        
-        description: "an example of a blog post with diagrams",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/diagrams/";
-          
-        },
-      },{id: "post-a-distill-style-blog-post",
-        
-          title: "a distill-style blog post",
-        
-        description: "an example of a distill-style blog post and main elements",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/distill/";
-          
-        },
-      },{id: "post-a-post-with-twitter",
-        
-          title: "a post with twitter",
-        
-        description: "an example of a blog post with twitter",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2020/twitter/";
-          
-        },
-      },{id: "post-a-post-with-disqus-comments",
-        
-          title: "a post with disqus comments",
-        
-        description: "an example of a blog post with disqus comments",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/disqus-comments/";
-          
-        },
-      },{id: "post-a-post-with-math",
-        
-          title: "a post with math",
-        
-        description: "an example of a blog post with some math",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/math/";
-          
-        },
-      },{id: "post-a-post-with-code",
-        
-          title: "a post with code",
-        
-        description: "an example of a blog post with some code",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/code/";
-          
-        },
-      },{id: "post-a-post-with-images",
-        
-          title: "a post with images",
-        
-        description: "this is what included images could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/images/";
-          
-        },
       },{id: "post-a-post-with-formatting-and-links",
         
           title: "a post with formatting and links",
@@ -432,7 +509,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2015/formatting-and-links/";
+            window.location.href = "/blog/2015/Clickhouse%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D-TODO/";
           
         },
       },{id: "books-the-godfather",
@@ -501,14 +578,14 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%32%31%37%71%75%61%6E%65%72@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://github.com/quaner-dev", "_blank");
         },
       },{
         id: 'social-rss',
@@ -518,11 +595,11 @@ ninja.data = [{
           window.open("/feed.xml", "_blank");
         },
       },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
+        id: 'social-wechat_qr',
+        title: 'Wechat_qr',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("", "_blank");
         },
       },{
         id: 'social-custom_social',

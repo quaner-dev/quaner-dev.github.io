@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="django-q2-启动-multiple-queues">Django Q2 启动 Multiple Queues</h1> <h2 id="settingpy-中增加-alt_clusters-相关配置">setting.py 中增加 ALT_CLUSTERS 相关配置</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_CLUSTER</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">myproject</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">workers</span><span class="sh">'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">recycle</span><span class="sh">'</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">timeout</span><span class="sh">'</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">compress</span><span class="sh">'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">save_limit</span><span class="sh">'</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">queue_limit</span><span class="sh">'</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">cpu_affinity</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">label</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Django Q2</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">redis</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="sh">'</span><span class="s">host</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">127.0.0.1</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">port</span><span class="sh">'</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">db</span><span class="sh">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="p">},</span>
+    <span class="sh">'</span><span class="s">ALT_CLUSTERS</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="sh">'</span><span class="s">long</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="sh">'</span><span class="s">timeout</span><span class="sh">'</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+            <span class="sh">'</span><span class="s">retry</span><span class="sh">'</span><span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+            <span class="sh">'</span><span class="s">max_attempts</span><span class="sh">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="sh">'</span><span class="s">short</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="sh">'</span><span class="s">timeout</span><span class="sh">'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="sh">'</span><span class="s">max_attempts</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <h2 id="启动-long-队列">启动 long 队列</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Q_CLUSTER_NAME</span><span class="o">=</span>long python manage.py qcluster
+</code></pre></div></div> </body></html>

@@ -1,0 +1,8 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="ubuntu-永久修改-dns">Ubuntu 永久修改 DNS</h1> <h2 id="修改-systemd-resolved-配置">修改 systemd-resolved 配置</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/systemd/resolved.conf
+</code></pre></div></div> <p>取消注释并修改以下行：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copy
+<span class="o">[</span>Resolve]
+<span class="nv">DNS</span><span class="o">=</span>1.1.1.1 223.5.5.5 <span class="c"># 指定 DNS 服务器（多个用空格分隔）。</span>
+<span class="nv">Domains</span><span class="o">=</span>~. <span class="c"># 表示所有域名查询都使用这些 DNS。</span>
+</code></pre></div></div> <h2 id="重启-systemd-resolved">重启 systemd-resolved</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart systemd-resolved
+</code></pre></div></div> <h2 id="验证-dns">验证 DNS</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resolvectl status
+</code></pre></div></div> </body></html>

@@ -1,0 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h1 id="查询硬盘-sn-号">查询硬盘 SN 号</h1> <h2 id="查询裸盘中-sn-号">查询裸盘中 SN 号</h2> <h3 id="lsblk-查询-sn-号">lsblk 查询 SN 号</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsblk <span class="nt">-o</span> name,size,model,vendor,serial <span class="c"># 可以直接返回裸盘SN号</span>
+</code></pre></div></div> <h3 id="lshw-查询-sn-号">lshw 查询 SN 号</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lshw
+</code></pre></div></div> <h2 id="查询-raid-中-sn-号">查询 Raid 中 SN 号</h2> <h3 id="使用-storcli64-工具查询-raid-情况">使用 storcli64 工具查询 Raid 情况</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/MegaRAID/storcli/storcli64 /c0 show all
+</code></pre></div></div> <h3 id="查询磁盘信息">查询磁盘信息</h3> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show all
+</code></pre></div></div> </body></html>
