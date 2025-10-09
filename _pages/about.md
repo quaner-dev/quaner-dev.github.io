@@ -2,16 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: 交付工程师 @ 清思智能. 专注于公安智能解决方案的落地与交付.
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
-    <p>number</p>
-    <p>profile</p>
-    <p>Karamay District, Xinjiang, China</p>
+    <p>217quaner@gmail.com</p>
+    <p>Haidian District, Beijing, China</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +26,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+我是刘炳全，现任清思智能的交付工程师。
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+我在公安行业已工作五年，客户主要面向公安各业务线。我的核心职责是确保各类智能解决方案的顺利落地与稳定运行，深度参与项目交付的全周期，包括软硬件部署、系统调试、定制开发、项目进度跟进与风险管控等方面。
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+在技术层面，我主要使用`Python`进行定制化与运维工作。在项目实践中，也接触并使用`ClickHouse`、`MySQL`、`Mongo`、`Redis`、`Kafka`、`ElasticSearch`等中间件以解决实际问题。
+
+这个站点记录了我的技术实践与思考。除了项目交付，我也会在这里分享关于系统架构、中间件应用与行业理解的文章。
