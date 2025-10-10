@@ -1,4 +1,4 @@
-# NetPlan gateway4 弃用报错
+# NetPlan Gateway4 弃用报错
 
 ## 问题
 
