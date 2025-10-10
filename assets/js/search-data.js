@@ -212,7 +212,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/NetPlan-gateway4%E5%BC%83%E7%94%A8%E6%8A%A5%E9%94%99/";
+            window.location.href = "/blog/2025/NetPlan-Gateway4%E5%BC%83%E7%94%A8%E6%8A%A5%E9%94%99/";
           
         },
       },{id: "post-docker安装",
