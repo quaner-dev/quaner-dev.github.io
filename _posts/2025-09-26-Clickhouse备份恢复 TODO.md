@@ -1,10 +1,9 @@
 ---
 layout: post
-title: a post with formatting and links
-date: 2015-03-15 16:40:16
-description: march & april, looking forward to summer
-tags: formatting links
-categories: sample-posts
+title: Clickhouse 备份恢复
+date: 2025-09-26
+tags: Database Backup Recovery
+categories: Clickhouse
 ---
 
 # Clickhouse 备份恢复 TODO

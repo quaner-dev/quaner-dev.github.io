@@ -1,4 +1,10 @@
-# Centos 修改 DNS 地址
+---
+layout: post
+title: Centos 修改 DNS 地址
+date: 2024-07-16
+tags: Network
+categories: Centos
+---
 
 ## 修改 DNS 地址
 

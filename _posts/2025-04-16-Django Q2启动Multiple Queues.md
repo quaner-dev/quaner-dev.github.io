@@ -1,4 +1,10 @@
-# Django Q2 启动 Multiple Queues
+---
+layout: post
+title: Django Q2 启动 Multiple Queues
+date: 2025-04-16
+tags: Django Django-Q2
+categories: Django
+---
 
 ## setting.py 中增加 ALT_CLUSTERS 相关配置
 

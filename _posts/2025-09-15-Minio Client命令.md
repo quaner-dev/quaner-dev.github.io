@@ -1,4 +1,10 @@
-# Minio Client 命令
+---
+layout: post
+title: Minio Client 命令
+date: 2025-09-15
+tags: Minio mc
+categories: Minio
+---
 
 ## 下载并安装 mc
 

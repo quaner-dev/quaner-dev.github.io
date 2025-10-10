@@ -1,4 +1,10 @@
-# Foxmail 添加 Gmail
+---
+layout: post
+title: Foxmail 添加 Gmail
+date: 2025-08-25
+tags: Gmail
+categories: Mail
+---
 
 ## 原因
 

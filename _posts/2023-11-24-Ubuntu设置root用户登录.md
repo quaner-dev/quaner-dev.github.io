@@ -1,4 +1,10 @@
-# Ubuntu 设置 root 用户登录
+---
+layout: post
+title: Ubuntu 设置 root 用户登录
+date: 2023-11-24
+tags: SSH
+categories: Ubuntu
+---
 
 ## 设置 root 用户密码
 

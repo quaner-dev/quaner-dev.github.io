@@ -1,4 +1,10 @@
-# NetPlan Gateway4 弃用报错
+---
+layout: post
+title: NetPlan Gateway4 弃用报错
+date: 2025-02-06
+tags: Netplan
+categories: Ubuntu
+---
 
 ## 问题
 

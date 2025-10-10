@@ -1,4 +1,10 @@
-# Ubuntu 永久修改 DNS
+---
+layout: post
+title: Ubuntu 永久修改 DNS
+date: 2025-04-11
+tags: DNS
+categories: Ubuntu
+---
 
 ## 修改 systemd-resolved 配置
 

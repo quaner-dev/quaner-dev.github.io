@@ -1,4 +1,10 @@
-# MMistakes 操作汇总
+---
+layout: post
+title: MMistakes 操作汇总
+date: 2024-12-01
+tags: Themes MMistakes
+categories: Jekyll
+---
 
 ## Git 更新 MMistakes 模板
 

@@ -1,4 +1,10 @@
-# Centos 修改 yum 源为阿里源
+---
+layout: post
+title: Centos 修改 yum 源为阿里源
+date: 2024-07-16
+tags: Yum
+categories: Centos
+---
 
 ## 备份系统自带 yum 源配置文件
 
