@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 交付工程师 @ 清思智能. 专注于公安智能解决方案的落地与交付.
+subtitle: 交付工程师 @ 清思智能。 专注于公安智能解决方案的落地与交付。
 
 profile:
   align: right
