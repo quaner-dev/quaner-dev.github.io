@@ -38,7 +38,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/Clickhouse%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D-TODO/";
+            window.location.href = "/blog/2025/Clickhouse%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D-TODO-copy/";
           
         },
       },{id: "post-minio-client-命令",
