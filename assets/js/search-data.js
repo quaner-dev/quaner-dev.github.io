@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-clickhouse-备份恢复",
+        },{id: "post-shell命令汇总",
+        
+          title: "Shell命令汇总",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Shell%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/";
+          
+        },
+      },{id: "post-clickhouse-备份恢复",
         
           title: "Clickhouse 备份恢复",
         
@@ -38,7 +49,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/Clickhouse%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D-TODO-copy/";
+            window.location.href = "/blog/2025/Clickhouse%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D/";
           
         },
       },{id: "post-minio-client-命令",
