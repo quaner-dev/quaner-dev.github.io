@@ -6,6 +6,4 @@ tags: Clickhouse Backup Recovery
 categories: Database
 ---
 
-# Clickhouse 备份恢复 TODO
-
 ## TODO
