@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-shell命令汇总",
+        },{id: "post-excel导入图片url并显示图片",
+        
+          title: "Excel导入图片URL并显示图片",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Excel%E5%AF%BC%E5%85%A5%E5%9B%BE%E7%89%87URL%E5%B9%B6%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/";
+          
+        },
+      },{id: "post-shell命令汇总",
         
           title: "Shell命令汇总",
         
