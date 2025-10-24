@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-excel导入图片url并显示图片",
+        },{id: "post-jmeter使用指南",
+        
+          title: "Jmeter使用指南",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Jmeter%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/";
+          
+        },
+      },{id: "post-excel导入图片url并显示图片",
         
           title: "Excel导入图片URL并显示图片",
         
