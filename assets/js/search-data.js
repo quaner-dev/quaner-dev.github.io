@@ -52,17 +52,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/Shell%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/";
           
         },
-      },{id: "post-clickhouse-备份恢复",
-        
-          title: "Clickhouse 备份恢复",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/Clickhouse%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D/";
-          
-        },
       },{id: "post-minio-client-命令",
         
           title: "Minio Client 命令",
@@ -118,17 +107,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/%E4%BC%98%E5%8C%96SQLite%E6%80%A7%E8%83%BD/";
           
         },
-      },{id: "post-ubuntu-防止合笔记本后挂起",
-        
-          title: "Ubuntu 防止合笔记本后挂起",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/Ubuntu%E9%98%B2%E6%AD%A2%E5%90%88%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%90%8E%E6%8C%82%E8%B5%B7/";
-          
-        },
       },{id: "post-django-q2-启动-multiple-queues",
         
           title: "Django Q2 启动 Multiple Queues",
@@ -138,6 +116,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/Django-Q2%E5%90%AF%E5%8A%A8Multiple-Queues/";
+          
+        },
+      },{id: "post-ubuntu-防止合笔记本后挂起",
+        
+          title: "Ubuntu 防止合笔记本后挂起",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Ubuntu%E9%98%B2%E6%AD%A2%E5%90%88%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%90%8E%E6%8C%82%E8%B5%B7/";
           
         },
       },{id: "post-ubuntu-永久修改-dns",
@@ -184,17 +173,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/%E5%BC%80%E5%90%AFswap/";
           
         },
-      },{id: "post-python-线程-进程-协程的关系与区别和使用方式",
-        
-          title: "Python 线程、进程、协程的关系与区别和使用方式",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/Python%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B-%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/";
-          
-        },
       },{id: "post-netplan-gateway4-弃用报错",
         
           title: "NetPlan Gateway4 弃用报错",
@@ -206,6 +184,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/NetPlan-Gateway4%E5%BC%83%E7%94%A8%E6%8A%A5%E9%94%99/";
           
         },
+      },{id: "post-python-线程-进程-协程的关系与区别和使用方式",
+        
+          title: "Python 线程、进程、协程的关系与区别和使用方式",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Python%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B-%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/";
+          
+        },
       },{id: "post-docker-安装",
         
           title: "Docker 安装",
@@ -215,6 +204,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/Docker%E5%AE%89%E8%A3%85/";
+          
+        },
+      },{id: "post-git-命令汇总",
+        
+          title: "Git 命令汇总",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Git%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/";
           
         },
       },{id: "post-python-类型注解",
@@ -248,17 +248,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2024/MMistakes%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/";
-          
-        },
-      },{id: "post-git-命令汇总",
-        
-          title: "Git 命令汇总",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/Git%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/";
           
         },
       },{id: "post-校时方法",
@@ -360,17 +349,6 @@ ninja.data = [{
             window.location.href = "/blog/2024/%E9%85%8D%E7%BD%AE%E8%81%9A%E5%90%88%E7%BD%91%E5%8F%A3/";
           
         },
-      },{id: "post-二进制部署-docker",
-        
-          title: "二进制部署 Docker",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2Docker/";
-          
-        },
       },{id: "post-ubuntu-18-04-4-安装-jdk",
         
           title: "Ubuntu 18.04.4 安装 JDK",
@@ -380,6 +358,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2024/Ubuntu-18.04.4-%E5%AE%89%E8%A3%85JDK/";
+          
+        },
+      },{id: "post-二进制部署-docker",
+        
+          title: "二进制部署 Docker",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2Docker/";
           
         },
       },{id: "post-常用正则表达式记录",
@@ -426,6 +415,17 @@ ninja.data = [{
             window.location.href = "/blog/2023/Iptable%E5%B0%81%E9%97%AD%E7%AB%AF%E5%8F%A3/";
           
         },
+      },{id: "post-storcli-使用文档",
+        
+          title: "Storcli 使用文档",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/Storcli%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/";
+          
+        },
       },{id: "post-ubuntu-设置-root-用户登录",
         
           title: "Ubuntu 设置 root 用户登录",
@@ -446,17 +446,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2023/Ubuntu%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85/";
-          
-        },
-      },{id: "post-storcli-使用文档",
-        
-          title: "Storcli 使用文档",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/Storcli%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/";
           
         },
       },{id: "post-常用-es-操作汇总",
