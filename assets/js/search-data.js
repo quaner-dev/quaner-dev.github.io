@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-jmeter使用指南",
+        },{id: "post-clickhouse-drop表过大异常",
+        
+          title: "Clickhouse Drop表过大异常",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Clickhouse-Drop%E8%A1%A8%E8%BF%87%E5%A4%A7%E5%BC%82%E5%B8%B8/";
+          
+        },
+      },{id: "post-jmeter使用指南",
         
           title: "Jmeter使用指南",
         
@@ -85,15 +96,15 @@ ninja.data = [{
             window.location.href = "/blog/2025/Foxmail%E6%B7%BB%E5%8A%A0Gmail/";
           
         },
-      },{id: "post-dockerignore-介绍",
+      },{id: "post-docker-ignore-介绍",
         
-          title: "Dockerignore 介绍",
+          title: "Docker Ignore 介绍",
         
         description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/Dockerignore%E4%BB%8B%E7%BB%8D/";
+            window.location.href = "/blog/2025/Docker-Ignore%E4%BB%8B%E7%BB%8D/";
           
         },
       },{id: "post-部署-k8s",
@@ -173,15 +184,15 @@ ninja.data = [{
             window.location.href = "/blog/2025/Docker%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/";
           
         },
-      },{id: "post-开启-swap",
+      },{id: "post-开启swap",
         
-          title: "开启 swap",
+          title: "开启Swap",
         
         description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/%E5%BC%80%E5%90%AFswap/";
+            window.location.href = "/blog/2025/%E5%BC%80%E5%90%AFSwap/";
           
         },
       },{id: "post-netplan-gateway4-弃用报错",
@@ -401,7 +412,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/LVM/";
+            window.location.href = "/blog/2024/LVM%E7%AE%80%E6%B4%81/";
           
         },
       },{id: "post-检查硬件情况",
