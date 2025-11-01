@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-clickhouse-drop表过大异常",
+        },{id: "post-snat和dnat",
+        
+          title: "SNAT和DNAT",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/SNAT%E5%92%8CDNAT/";
+          
+        },
+      },{id: "post-clickhouse-drop表过大异常",
         
           title: "Clickhouse Drop表过大异常",
         
