@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-snat和dnat",
+        },{id: "post-sqlite-vacuum",
+        
+          title: "SQLite Vacuum",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/SQLite-Vacuum/";
+          
+        },
+      },{id: "post-snat和dnat",
         
           title: "SNAT和DNAT",
         
