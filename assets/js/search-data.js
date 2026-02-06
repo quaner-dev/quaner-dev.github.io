@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-sqlite-vacuum",
+        },{id: "post-openclaw-部署文档",
+        
+          title: "OpenClaw 部署文档",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/OpenClaw%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/";
+          
+        },
+      },{id: "post-sqlite-vacuum",
         
           title: "SQLite Vacuum",
         
@@ -434,7 +445,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/LVM%E7%AE%80%E6%B4%81/";
+            window.location.href = "/blog/2024/LVM%E7%AE%80%E4%BB%8B/";
           
         },
       },{id: "post-检查硬件情况",
