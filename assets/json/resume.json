@@ -1,221 +1,206 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
-    "image": "",
-    "email": "einstein@example.com",
-    "phone": "(912) 123-4567",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "name": "刘炳全",
+    "label": "交付工程师",
+    "image": "prof_pic.jpg",
+    "email": "217quaner@gmail.com",
+    "phone": "18612660269",
+    "url": "https://quaner-dev.github.io/",
     "location": {
       "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": []
+      "postalCode": "100080",
+      "city": "Beijing",
+      "countryCode": "CN",
+      "region": "Haidian District"
+    }
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Princeton University, NJ",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity", "Description 2."]
+      "name": "北京清思智能科技有限公司",
+      "position": "交付工程师",
+      "startDate": "2024-03",
+      "endDate": "至今",
+      "summary": "",
+      "highlights": [
+        "负责三方数据对接工作，使用 Flask 书写相关对接脚本；",
+        "修改后场给出的 Shell 脚本，使其可以适应现场环境部署，并使用 Shell 及其文本处理工具 grep、awk、sed、rsync 等进行日志分析、监控、数据备份等日常工作；",
+        "完成业务系统关联的硬件、软件的全流程交付工作；",
+        "业务系统性能调优、软件测试问题排查、开源中间件 Istio、Seaweedfs 性能测试；",
+        "与客户沟通相关需求，并跟进项目进度。"
+      ]
     },
     {
-      "name": "California Institute of Technology",
-      "position": "Visiting Professor",
-      "location": "Pasadena, California, US",
-      "startDate": "1933-01-01",
-      "endDate": "1933-01-01",
+      "name": "北京瑞莱智慧科技有限公司",
+      "position": "交付工程师",
+      "url": "https://www.realai.ai",
+      "startDate": "2020-10",
+      "endDate": "2023-05",
       "summary": "",
-      "highlights": ["Description 1.", "Description 2."]
+      "highlights": ["同清思智能工作内容"]
     },
     {
-      "name": "Kaiser Wilhelm Institute for Physics",
-      "position": "Director",
-      "location": "Berlin, Germany",
-      "startDate": "1917-01-01",
-      "endDate": "1933-01-01",
+      "name": "北京依图网络科技有限公司",
+      "position": "交付工程师",
+      "url": "https://www.yitutech.com",
+      "startDate": "2023-05",
+      "endDate": "2024-03",
       "summary": "",
-      "highlights": []
+      "highlights": [
+        "负责项目范围的评估，协调项目资源，制定项目计划和质量标准，达成项目目标；",
+        "负责将部里客户的业务需求，转换为合理可实现的开发需求，必要时对客户需求进行引导；",
+        "负责对公司产出的产品、定制和算法进行前场测试，并给出专业报告和修改意见；",
+        "负责公司项目的部署和技术支持，确保在项目节点前业务正常运行；",
+        "支撑全国范围内项目，例如 GAB 、北京、泸州、五寨、深圳等项目；",
+        "利用 Grafana 监控对于产品性能进行分析工作。"
+      ]
     },
     {
-      "name": "Karl-Ferdinand University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Prague, Czechoslovakia",
-      "startDate": "1911-01-01",
-      "endDate": "1917-01-01",
+      "name": "北京华美汉盛信息技术有限公司",
+      "position": "Python开发工程师",
+      "startDate": "2020-03",
+      "endDate": "2020-10",
       "summary": "",
-      "highlights": []
+      "highlights": [
+        "负责 Brilliant Earth 项目的前后端开发工作；",
+        "负责页面和数据库性能调优工作；",
+        "负责适配服务提供商接口对接工作；",
+        "与设计师、产品经理密切合作，确保 Brilliant Earth 有优秀的用户体验。"
+      ]
     },
     {
-      "name": "University of Zurich",
-      "position": "Associate Professor of Theoretical Physics",
-      "location": "Zurich, Switzerland",
-      "startDate": "1909-01-01",
-      "endDate": "1911-01-01",
+      "name": "润建股份有限公司",
+      "position": "Python开发工程师",
+      "url": "https://www.runjian.com",
+      "startDate": "2019-08",
+      "endDate": "2020-02",
       "summary": "",
-      "highlights": []
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "highlights": [
+        "使用 Django 框架和 PostgreSQL 数据库构建业务系统，实现对于网优业务的流程管控；",
+        "对于分配实体机服务器安装 Centos 系统，并对漏洞扫描中出现的漏洞进行修复，或使用 iptables 进行封禁管理；",
+        "使用 API 方式对接三方接口，实现业务系统的数据流转。"
+      ]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Physics",
-      "studyType": "PhD",
-      "startDate": "1900-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
-      "courses": ["Theory of Relativity"],
-      "highlights": ["Description 1.", "Description 2."]
-    },
-    {
-      "institution": "Eidgenössische Technische Hochschule",
-      "location": "Zurich, Switzerland",
-      "area": "Physics",
-      "studyType": "Federal teaching diploma",
-      "startDate": "1896-01-01",
-      "endDate": "1900-01-01",
-      "score": "",
-      "courses": [],
-      "highlights": ["Description 1.", "Description 2."]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    },
-    {
-      "title": "Max Planck Medal",
-      "date": "2029-01-01",
-      "awarder": "German Physical Society",
-      "summary": ""
+      "institution": "天津科技大学",
+      "location": "天津",
+      "url": "https://www.tust.edu.cn/",
+      "area": "自动化",
+      "studyType": "Bachelor",
+      "startDate": "2014",
+      "endDate": "2018"
     }
   ],
   "certificates": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
+      "name": "PMP",
+      "date": "2023-05-18",
+      "issuer": "PMI",
+      "url": "https://www.pmi.org/",
       "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-envelope"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrodynamik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
+      "name": "Linux 系统",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "keywords": "精通 Linux 操作系统的安装、操作和维护，确保系统稳定运行"
+    },
+    {
+      "name": "容器技术",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": "熟练掌握 Docker和K8S 容器技术，具备丰富的部署、运维和排错经验"
+    },
+    {
+      "name": "脚本编程",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": "熟练使用 Shell和Python 脚本语言，完成脚本编写和运维工具开发"
+    },
+    {
+      "name": "Python 开发",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": "熟悉 Django、Flask 框架，具备 Restful 接口调试经验"
+    },
+    {
+      "name": "中间件管理",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": "熟练使用 MySQL、MongoDB、Redis、Kafka、PostgreSQL 等中间件和SQL语句，提供高效的管理服务"
+    },
+    {
+      "name": "大模型",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": "在本机中部署Dify，并接入Deepseek来构建自己的Workflow，用于提升工作效率"
     }
   ],
   "languages": [
     {
-      "language": "German",
+      "language": "Chinese",
       "fluency": "Native speaker",
       "icon": ""
     },
     {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "Intermediate",
       "icon": ""
-    }
-  ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
-    },
-    {
-      "name": "Professor Jane Smith",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
     }
   ],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01"
+      "name": "J市智能化项目",
+      "highlights": [
+        "项目全流程跟进：从Poc开始，到硬件上架、软件部署、软件调试、定制开发、项目验收等工作",
+        "前场沟通工作：在前场与客户沟通，对于客户需求同公司目标之间的矛盾协调，并做好客户的预期管理，以及项目风险管理风工作"
+      ],
+      "startDate": "2023-05",
+      "endDate": "至今"
+    },
+    {
+      "name": "DMT内容审核",
+      "highlights": [
+        "负责服务器上架、人脸识别产品部署、Linux 服务器系统安装和交换机网络配置等事宜；",
+        "使用 Jmeter 开源测试工具以及开发测试脚本，对产品性能进行测试，并跟进算法性能调优；",
+        "对接公有协议，并产出相应开发需求，书写测试脚本，并开展多厂家对接；",
+        "使用 Docker和 Docker Compose 对定制脚本部署，并开展日常运维工作。"
+      ],
+      "startDate": "2021-03",
+      "endDate": "2023-05"
+    },
+    {
+      "name": "YMJ人脸比对项目",
+      "highlights": [
+        "使用 Docker和K8S 作为 Paas 层，实现近百台机器管理工作；",
+        "负责 Billion 级别人脸比对服务，算法升级评估、部署工作和底库建设工作；",
+        "书写 Python 脚本，对算法性能指标以及接口开展性能测试；",
+        "跟踪客户需求，并根据需求转化为运维产品；",
+        "书写部署、使用、运维等相关文档，开展全国范围内的产品培训、部署支撑等工作；",
+        "对 MongoDB 进行分库分表，实现数据备份并加快检索速度；",
+        "使用 Python 对接不同的 Oracle 版本，获取图片数据，实现入库工作"
+      ],
+      "startDate": "2020-10",
+      "endDate": "2023-05"
+    },
+    {
+      "name": "SPY项目",
+      "highlights": [
+        "负责标准化产品在阿里云虚拟机系统上的适配、部署、调试工作；",
+        "负责定制产品适配阿里云组件（MongoDB、Kafka、Flink、MaxCompute、OSS ）的部署、调试；",
+        "负责算法产品的算法能力 PK 工作；",
+        "书写 Shell 脚本，实现定时清理异常数据，探测数据库状态等功能，确保系统持续运行，保障稳定性。"
+      ],
+      "startDate": "2020-10",
+      "endDate": "2023-05"
+    },
+    {
+      "name": "BJ大学智慧校园",
+      "highlights": [
+        "负责服务器收货、上架上电、系统安装、产品安装部署，全流程跟进；",
+        "对接三方平台联网平台，根据校内点位分布情况，进行点位选取和视频流调试；",
+        "负责国产 CPU 机器性能调优工作，修改 BIOS 参数提升性能；",
+        "开发 Python 脚本，实现业务系统中告警数据推送校园业务平台。"
+      ],
+      "startDate": "2020-10",
+      "endDate": "2021-10"
     }
   ]
 }
