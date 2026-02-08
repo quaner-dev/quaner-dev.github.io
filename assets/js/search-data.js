@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-openclaw-部署文档",
+            },{id: "post-al-folio-操作汇总",
+        
+          title: "al-folio 操作汇总",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Al-Folio%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/";
+          
+        },
+      },{id: "post-openclaw-部署文档",
         
           title: "OpenClaw 部署文档",
         
