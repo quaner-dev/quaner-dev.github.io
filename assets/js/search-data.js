@@ -44,7 +44,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-al-folio-操作汇总",
+            },{id: "post-ubuntu开启rdp",
+        
+          title: "Ubuntu开启RDP",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Ubuntu%E5%BC%80%E5%90%AFRDP/";
+          
+        },
+      },{id: "post-timeshift备份系统",
+        
+          title: "TimeShift备份系统",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/TimeShift%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F/";
+          
+        },
+      },{id: "post-al-folio-操作汇总",
         
           title: "al-folio 操作汇总",
         
