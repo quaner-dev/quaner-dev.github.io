@@ -3,7 +3,7 @@ layout: post
 title: Clickhouse Drop表过大异常
 date: 2025-10-27
 tags: Clickhouse
-categories: Middleware
+categories: Database
 ---
 
 ## 异常情况

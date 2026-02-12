@@ -2,7 +2,7 @@
 layout: post
 title: TimeShift备份系统
 date: 2026-02-11
-tags: timeshift
+tags: Timeshift
 categories: Backup
 ---
 
