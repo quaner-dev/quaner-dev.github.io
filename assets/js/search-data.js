@@ -44,7 +44,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-ubuntu开启rdp",
+            },{id: "post-搭建-python-venv-环境",
+        
+          title: "搭建 Python Venv 环境",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/%E6%90%AD%E5%BB%BAPython-Venv%E7%8E%AF%E5%A2%83/";
+          
+        },
+      },{id: "post-pip安装mysqlclient",
+        
+          title: "Pip安装MysqlClient",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Pip%E5%AE%89%E8%A3%85MysqlClient/";
+          
+        },
+      },{id: "post-ubuntu开启rdp",
         
           title: "Ubuntu开启RDP",
         
@@ -64,6 +86,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2026/TimeShift%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F/";
+          
+        },
+      },{id: "post-linux初始化磁盘",
+        
+          title: "Linux初始化磁盘",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Linux%E5%88%9D%E5%A7%8B%E5%8C%96%E7%A3%81%E7%9B%98/";
           
         },
       },{id: "post-al-folio-操作汇总",
