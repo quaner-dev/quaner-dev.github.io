@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-搭建-python-venv-环境",
+            },{id: "post-openclaw官方docker容器中clawdhub安装eacces权限问题记录",
+        
+          title: "OpenClaw官方Docker容器中ClawdHub安装EACCES权限问题记录",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/OpenClaw%E5%AE%98%E6%96%B9Docker%E5%AE%B9%E5%99%A8%E4%B8%ADClawdHub%E5%AE%89%E8%A3%85EACCES%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/";
+          
+        },
+      },{id: "post-搭建-python-venv-环境",
         
           title: "搭建 Python Venv 环境",
         
