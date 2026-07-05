@@ -44,7 +44,40 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-openclaw官方docker容器中clawdhub安装eacces权限问题记录",
+            },{id: "post-python-父进程和子进程的关系",
+        
+          title: "Python 父进程和子进程的关系",
+        
+        description: "父进程和子进程的创建、执行、等待与退出关系。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Python%E7%88%B6%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%AD%90%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB/";
+          
+        },
+      },{id: "post-python-信号量介绍",
+        
+          title: "Python 信号量介绍",
+        
+        description: "Python 信号量的概念、使用场景与实践说明。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Python%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%BB%8B%E7%BB%8D/";
+          
+        },
+      },{id: "post-编写-ai-skill-的随笔",
+        
+          title: "编写 AI Skill 的随笔",
+        
+        description: "记录编写 AI Skill 过程中的思考、尝试和阶段性理解。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/%E7%BC%96%E5%86%99AI-Skill%E7%9A%84%E7%BB%8F%E9%AA%8C/";
+          
+        },
+      },{id: "post-openclaw官方docker容器中clawdhub安装eacces权限问题记录",
         
           title: "OpenClaw官方Docker容器中ClawdHub安装EACCES权限问题记录",
         
@@ -330,9 +363,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/NetPlan-Gateway4%E5%BC%83%E7%94%A8%E6%8A%A5%E9%94%99/";
           
         },
-      },{id: "post-python-线程-进程-协程的关系与区别和使用方式",
+      },{id: "post-python-进程-线程-协程的关系与区别和使用方式",
         
-          title: "Python 线程、进程、协程的关系与区别和使用方式",
+          title: "Python 进程、线程、协程的关系与区别和使用方式",
         
         description: "",
         section: "Posts",
