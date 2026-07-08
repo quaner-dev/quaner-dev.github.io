@@ -39,22 +39,21 @@ sudo timeshift-gtk
 
 1. 选择快照类型（RSYNC 或 BTRFS）
 
-    ![选择快照类型](/assets/img/post_img/2026-02-11-TimeShift备份系统/1.png)
-
-    - **RSYNC**：适用于绝大多数非 Btrfs 文件系统，通用性最好
-    - **BTRFS**：仅适用于 Btrfs 文件系统，创建和回滚速度更快
+   ![选择快照类型](/assets/img/post_img/2026-02-11-TimeShift备份系统/1.png)
+   - **RSYNC**：适用于绝大多数非 Btrfs 文件系统，通用性最好
+   - **BTRFS**：仅适用于 Btrfs 文件系统，创建和回滚速度更快
 
 2. 选择快照存储位置
 
-    ![选择快照存储位置](/assets/img/post_img/2026-02-11-TimeShift备份系统/2.png)
+   ![选择快照存储位置](/assets/img/post_img/2026-02-11-TimeShift备份系统/2.png)
 
-    建议放在独立分区或外接硬盘，避免系统盘损坏时快照不可用。
+   建议放在独立分区或外接硬盘，避免系统盘损坏时快照不可用。
 
 3. 设置快照计划任务
 
-    ![设置快照计划任务](/assets/img/post_img/2026-02-11-TimeShift备份系统/3.png)
+   ![设置快照计划任务](/assets/img/post_img/2026-02-11-TimeShift备份系统/3.png)
 
-    可按“每小时 / 每日 / 每周 / 每月”设定频率。个人桌面环境通常使用“每日 + 每周”即可。
+   可按“每小时 / 每日 / 每周 / 每月”设定频率。个人桌面环境通常使用“每日 + 每周”即可。
 
 ### 浏览与恢复快照
 
