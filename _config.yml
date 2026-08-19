@@ -53,7 +53,7 @@ repo_trophies:
 # update these URLs. These are used in the repository templates.
 external_services:
   github_readme_stats_url: https://github-stats-extended.vercel.app
-  github_profile_trophy_url: https://github-profile-trophy.vercel.app
+  github_profile_trophy_url: https://trophygithubreadmelang.cybee.dpdns.org
 
 # -----------------------------------------------------------------------------
 # al-folio API (v1.x)
